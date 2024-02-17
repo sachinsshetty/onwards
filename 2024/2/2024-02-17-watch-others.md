@@ -1,0 +1,5 @@
+## Watching others
+
+Each moment spent looking at others, your wasting/losing the time that should have been put to improve yourself. The past only needs to be revisited for the learning from mistakes. Write it down, summarize the problem and then stop going back to the past. Either for reminiscing the good times or cursing for the at the wrong's that life has inflicted on you.
+
+Do well, whatever you do. Do not stop at the first encounter of the problem or at the inevitable arrival of misery. Even this will pass, Do not become too attached to the present, everything in life has an expiry date. Move on from the memories/horrors of the past. The future can be created in the image of your own dreams, it will be slow and hard and difficult to make a small change in the universe. Each day you can still do something, keep your head up. Fight for your way
