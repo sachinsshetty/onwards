@@ -1,2 +1,6 @@
 Republic Day India
 
+Kartavya Marg, New delhi displayed the colorful and vibrant culture of Bharat, with dance froms represented across the entire region of the Nation.
+
+Protectors and Masters of the Air, Combat/logistics/reconaissance aircrafts showcased the might of the Air force, instilling a sense of security and safety from adversaries. Most of the earlier versions of the Republic day parade was dominated by yhe Men show showcased their acrobatics and Marchpast. Now women are also represented in equal footing, opening the pathway for the 50% population to be part of the national security. FRom the shool children to the youth, to the professionals of Indian female population , there was the sense of appreciation in nation building in various forms. Glass ceilings are being broken and women setting new records. For a nation to be developed and succeed, opportunities should be available and open for all. Bharat is stepping into the 4th quarter of Indepedence since 1947.
+With the might of the population, we can dream new dreams. Build and create new industries witht the knowledge and foundation from the earlier 75 years
