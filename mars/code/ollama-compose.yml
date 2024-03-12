@@ -20,11 +20,11 @@ services:
               count: 1
               capabilities: [gpu]
 
-  ollama-webui:
-    image: ghcr.io/ollama-webui/ollama-webui:main
-    container_name: ollama-webui
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:git-26a187f
+    container_name: open-webui
     volumes:
-      - ./ollama/ollama-webui:/app/backend/data
+      - ./ollama/open-webui:/app/backend/data
     depends_on:
       - ollama
     ports:
