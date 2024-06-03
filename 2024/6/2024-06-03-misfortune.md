@@ -16,7 +16,7 @@ Help others grow and overcome problems. Show the light to the world in the times
 
 Destiny
 
-The child awakes the fate, that he is destined for by the Daily inroads and efforts to make the dream into reality.
+The child awakes the fate, that he is destined for, by the Daily inroads and efforts to make the dream into reality.
 
 Many times we drop the ball and leave the path that we chose to pursue. The path ahead will have a lot of diversions,  this is the way of the world. Its not actively trying to sabotage your progress,  life gives a lot of options, stay awake and active to choose the right paths. 
 
