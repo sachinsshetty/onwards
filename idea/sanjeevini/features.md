@@ -1,0 +1,32 @@
+Features - Ideaboard
+
+- Integrations
+    - API
+        - Aadhar health ID - Ayushman Bharat Digital Mission
+    - Import/Export Exchange
+        - Write Base Ingestor for data exchange/ 
+        - Community can build ingestor for Other Api Systems
+            - Xiaomi - MI Fit
+            - Apple Health SDK
+            - Google Health
+            - Samsung Health
+- Crawler
+    - Web Crawler 
+        - Use Kagi/Googe/Brave API for real time access
+        - Build WebPage crawler for Internal/External Company Data
+    - Git Repo Crawler
+        - GitHub/ GitLab Repo crawler for Documents
+    - Documnet Storage Crawler
+        - Dropbox/ GoogleDrive/ NextCloud Integration
+- Voice Agent
+    - Request data with Voice
+    - Response 
+        - Text
+        - Voice
+- Interoperability
+    - Build a fedarated exchange
+    - Bring and Take your won data
+- One- Click Setup
+    - Docker for Local
+    - AWS/Azure - Terraform Setup
+    - Kubernetes for Multi-system clusters
