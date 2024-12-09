@@ -1,0 +1,1 @@
+A local copy of Wikipedia and a local AI model should be enough information to get you through almost any no-internet scenario.
