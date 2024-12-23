@@ -1,6 +1,14 @@
 Sources- AI4Bharat
 
+- IndicTransV2
+ - https://github.com/AI4Bharat/IndicTrans2
+
 - Language Detection - IndicLID
+  - https://github.com/AI4Bharat/IndicLID
+
+
+- Xlit
+  - https://xlit.ai4bharat.org/
 
 - Language Translation - Chitralekha 
     - ASR + NMT + Text
