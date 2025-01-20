@@ -1,5 +1,24 @@
 Cyberfame POC
 
+--
+
+- First Draft program
+  - Clone repo - 
+  - analyze - requirements.txt
+    - Build - dependency graph
+      - library : find reused / cyclic dependency from graph
+
+  - maven/ pom.xml : depenency project 
+    - https://github.com/slabstech/buildabot/blob/main/scripts/buildabot.sh
+    - https://github.com/slabstech/buildabot
+  - search - ossf / osv.dev
+    - for library vulnerability
+    - web search / api call
+  - create - table of library and vulnerability
+  - Extra - python + linter + sast + fuzz-test for API calls
+
+--
+
 - Agent Flow - Code verification
   - Identify Repo
   - Create temporary docker container for required framework
