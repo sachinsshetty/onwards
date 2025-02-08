@@ -1,5 +1,37 @@
 Munich Hackathon - Edth 2 
 
+
+Counter terrorism / Intelligence 
+
+Add misinformation via radio,
+Generate audio via voice cloning based of top leaders.
+Regularly send audio / letters.
+
+Overload intelligence gathering systems and create havoc for distraction .
+
+
+Read/ input : intelligence materials for fine tunings models 
+Make it a tyrant model and spew incendent creati ng systems.  
+
+-- 
+
+Build a system to identify misinformation/ counter intelligence and provide counter solutions. 
+
+-- 
+
+Create a Generative Adversial Network. 
+
+-- 
+
+Input books
+
+Cia training material 
+Chris voss - hostage Negotiation tactics 
+Classified material - released from archives. 
+
+
+--- 
+
 - Digital Battlefield
   - DeepResearch like DefenseResearch based on GeoSpy model 
   - Video Analytics : Simulate Edge Camera via GoPro + Video Camera
