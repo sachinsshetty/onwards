@@ -117,11 +117,11 @@ The development is currently being executed on a laptop with a GTX 1060 6GB VRAM
 ### Cloud Providers
 
 - **Cost**: Estimated $1,800 for three months of cloud-based GPU access.
-- **Justification**: Necessary for initial model training and performance evaluation.
+- **Justification**: Necessary for initial infra setup, model optimization and performance evaluation.
 
-### On-Premise GPU Setup
+### On-Premise GPU Setup 
 
-- **Cost**: Estimated $X,XXX for hardware and setup.
+- **Cost**: 4,000 $ for hardware and setup :  RTX 4090 - Workstation with 34GB VRAM
 - **Justification**: Long-term investment for sustainable development and scalability.
 
 ### GPU Access Cost Estimation
@@ -133,69 +133,26 @@ The development is currently being executed on a laptop with a GTX 1060 6GB VRAM
 
 #### Cost Breakdown
 
-| Month  | Activity                                  | Users   | GPU Hours per Day | Number of GPUs | Cost per Hour ($) | Daily Cost ($) | Monthly Cost ($) |
+| Month  | Activity                                  | Users   | GPU Hours per Day | Number of GPUs | Cost per Hour/GPU ($) | Daily Cost ($) | Monthly Cost ($) |
 |--------|-------------------------------------------|---------|------------------|----------------|-------------------|----------------|------------------|
 | 1      | Development and optimization             | 1-5     | 8                | 1              | 0.5               | 4              | 120              |
-| 2      | Scalability tests and beta users         | 10-20   | 16               | 3              | 1.5               | 72             | 720              |
-| 3      | Large scale testing across timezones     | 10-20   | 24               | 3              | 1.5               | 108            | 960              |
-
-#### Calculations
-
-**Month 1**
-- **Activity**: Development and optimization
-- **Users**: 1-5
-- **GPU Hours per Day**: 8
-- **Number of GPUs**: 1
-- **Cost per Hour**: $0.5
-- **Daily Cost**: 0.5 × 8 = $4
-- **Monthly Cost**: 4 × 30 = $120
-
-**Month 2**
-- **Activity**: Scalability tests and beta users
-- **Users**: 10-20
-- **GPU Hours per Day**: 16
-- **Number of GPUs**: 3
-- **Cost per Hour**: $1.5
-- **Daily Cost**: 1.5 × 16 × 3 = $72
-- **Monthly Cost**: 72 × 30 = $720
-
-**Month 3**
-- **Activity**: Large scale testing across timezones
-- **Users**: 10-20
-- **GPU Hours per Day**: 24
-- **Number of GPUs**: 3
-- **Cost per Hour**: $1.5
-- **Daily Cost**: 1.5 × 24 × 3 = $108
-- **Monthly Cost**: 108 × 30 = $960
+| 2      | Scalability tests and beta users         | 10-20   | 16               | 3              | 0.5               | 24             | 720              |
+| 3      | Large scale testing across timezones     | 10-20   | 24               | 3              | 0.5               | 36            | 960              |
 
 **Total Cost**
 - **Total Cost**: $120 + $720 + $960 = $1,800
 
-## Cloud Providers and GPU Access
-
-| Cloud Provider       | GPU Model       | Price per Month | Price per Hour | Setup Cost | URL                                                                                                                          |
-|----------------------|------------------|-----------------|-----------------|------------|------------------------------------------------------------------------------------------------------------------------------|
-| Hetzner              | GEX 44           | $205            | N/A             | $88        | [Hetzner GEX 44](https://www.hetzner.com/dedicated-rootserver/gex44/)                                                       |
-| Digital Ocean       | H100             | N/A             | $3.4            | N/A        | [Digital Ocean Pricing](https://www.digitalocean.com/pricing/gpu-droplets)                                                  |
-| Ola Krutrim         | A100-NVLINK-Mini | N/A             | 45 Rs           | N/A        | [Ola Krutrim AI Pods](https://cloud.olakrutrim.com/console/ai-pod?section=aipods)                                           |
-| Vast.ai             | Various          | N/A             | $0.5            | N/A        | [Vast.ai Pricing](https://vast.ai/pricing)                                                                                   |
-| Tensor Dock         | RTX 4090         | N/A             | $0.5            | N/A        | [Tensor Dock Deploy](https://dashboard.tensordock.com/deploy?gpu=geforcertx4090-pcie-24gb&gpuCount=1&ramAmount=18&vcpuCount=2&storage=80&location=c6e6ce65-b799-47e7-a465-aa0beb60d099&os=TensorML-20.04-LTS-PyTorch) |
-| Hyperstack Cloud    | RTX A6000        | N/A             | $0.5            | N/A        | [Hyperstack Cloud GPU Pricing](https://www.hyperstack.cloud/gpu-pricing)                                                     |
-| Run Pod             | RTX 4090         | N/A             | $0.5            | N/A        | [Run Pod Pricing](https://www.runpod.io/pricing)                                                                            |
 
 ## Test Cloud Provider - OlaKrutrim Cloud
 
 ### Overview
 
-We are utilizing the A100-NVLINK-Mini for the project. This setup is straightforward to initiate and deploy for basic inference tasks.
+We tested A100-NVLINK-Mini for the project. This setup is straightforward to initiate and deploy for basic inference tasks.
 
 ### Provider and Costs
 
 OlaKrutrim is an ideal provider for this task. They charge on an hourly basis with a calculated 15-minute interval, ensuring flexibility and cost-effectiveness. There is no long-term commitment required, making it easy to start and stop as needed.
 
-### Setup and Installation
-
-The installation script runs in just 4 minutes on startup. You can find the setup script here: [ASR Indic Server Setup Script](https://github.com/slabstech/asr-indic-server/blob/server-dep/setup.sh).
 
 | Instance Type         | Price (₹/hour) | GPUs | Availability | vCPUs | GPU Memory | RAM    |
 |-----------------------|----------------|------|-------------|-------|------------|--------|
@@ -203,6 +160,23 @@ The installation script runs in just 4 minutes on startup. You can find the setu
 | A100-NVLINK-Standard-1x| ₹ 105          | 1    | Medium | 16    | 40 GB      | 60 GB  |
 | H100-NVLINK-Nano      | ₹ 83           | 1    | Medium | 16    | 20 GB      |        |
 | H100-NVLINK-Mini      | ₹ 124          | 1    | Medium      | 16    | 40 GB      | 60 GB  |
+
+### Setup and Installation
+
+The installation script runs in just 4 minutes on startup. You can find the setup script here: [ASR Indic Server Setup Script](https://github.com/slabstech/asr-indic-server/blob/server-dep/setup.sh).
+
+
+## Alternate Cloud Providers for GPU Access
+
+| Cloud Provider       | GPU Model       | Price per Month | Price per Hour | Setup Cost | URL                                                                                                                          |
+|----------------------|------------------|-----------------|-----------------|------------|------------------------------------------------------------------------------------------------------------------------------|
+| Hetzner              | GEX 44           | $205            | N/A             | $88        | [Hetzner GEX 44](https://www.hetzner.com/dedicated-rootserver/gex44/)                                                       |
+| Digital Ocean       | H100             | N/A             | $3.4            | N/A        | [Digital Ocean Pricing](https://www.digitalocean.com/pricing/gpu-droplets)                                                  |
+| Vast.ai             | Various          | N/A             | $0.5            | N/A        | [Vast.ai Pricing](https://vast.ai/pricing)                                                                                   |
+| Tensor Dock         | RTX 4090         | N/A             | $0.5            | N/A        | [Tensor Dock Deploy](https://dashboard.tensordock.com/deploy?gpu=geforcertx4090-pcie-24gb&gpuCount=1&ramAmount=18&vcpuCount=2&storage=80&location=c6e6ce65-b799-47e7-a465-aa0beb60d099&os=TensorML-20.04-LTS-PyTorch) |
+| Hyperstack Cloud    | RTX A6000        | N/A             | $0.5            | N/A        | [Hyperstack Cloud GPU Pricing](https://www.hyperstack.cloud/gpu-pricing)                                                     |
+| Run Pod             | RTX 4090         | N/A             | $0.5            | N/A        | [Run Pod Pricing](https://www.runpod.io/pricing)                                                                            |
+
 
 ## Conclusion
 
