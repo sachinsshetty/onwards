@@ -136,6 +136,29 @@ We appreciate your consideration and look forward to the possibility of collabor
 
 --- 
 
+### Test cloud provider - OlaKrutrim Cloud
+# GPU Access for Project Deployment
+
+## Overview
+
+We are utilizing the A100-NVLINK-Mini for the project. This setup is straightforward to initiate and deploy for basic inference tasks.
+
+## Provider and Costs
+
+OlaKrutrim is an ideal provider for this task. They charge on an hourly basis with a calculated 15-minute interval, ensuring flexibility and cost-effectiveness. There is no long-term commitment required, making it easy to start and stop as needed.
+
+## Setup and Installation
+
+The installation script runs in just 4 minutes on startup. You can find the setup script here: [ASR Indic Server Setup Script](https://github.com/slabstech/asr-indic-server/blob/server-dep/setup.sh).
+
+
+| Instance Type         | Price (₹/hour) | GPUs | Availability | vCPUs | GPU Memory | RAM    |
+|-----------------------|----------------|------|-------------|-------|------------|--------|
+| A100-NVLINK-Mini      | ₹ 45           | 1    | Unavailable | 16    | 20 GB      |        |
+| A100-NVLINK-Standard-1x| ₹ 105          | 1    | Unavailable | 16    | 40 GB      | 60 GB  |
+| H100-NVLINK-Nano      | ₹ 83           | 1    | Unavailable | 16    | 20 GB      |        |
+| H100-NVLINK-Mini      | ₹ 124          | 1    | Medium      | 16    | 40 GB      | 60 GB  |
+
 
 # Cloud Providers and GPU Access
 
