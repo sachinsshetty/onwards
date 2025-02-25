@@ -121,7 +121,7 @@ The development is currently being executed on a laptop with a GTX 1060 6GB VRAM
 
 ### On-Premise GPU Setup 
 
-- **Cost**: 4,000 $ for hardware and setup :  RTX 4090 - Workstation with 34GB VRAM
+- **Cost**: 4,000 $ for hardware and setup :  RTX 4090 - Workstation with 24GB VRAM
 - **Justification**: Long-term investment for sustainable development and scalability.
 
 ### GPU Access Cost Estimation
@@ -160,6 +160,16 @@ OlaKrutrim is an ideal provider for this task. They charge on an hourly basis wi
 | A100-NVLINK-Standard-1x| ₹ 105          | 1    | Medium | 16    | 40 GB      | 60 GB  |
 | H100-NVLINK-Nano      | ₹ 83           | 1    | Medium | 16    | 20 GB      |        |
 | H100-NVLINK-Mini      | ₹ 124          | 1    | Medium      | 16    | 40 GB      | 60 GB  |
+
+
+Cost from Huggingface Spaces - Ease of Use and model close to server
+
+| GPU Type            | vCPU | Memory | GPU Model | GPU Memory | Price ($) |
+|----------------------|------|--------|-----------|------------|-----------|
+| Nvidia T4 - small    |  4   | 15 GB  | Nvidia T4 | 16 GB      | $0.40      |
+| 1x Nvidia L4         |  8   | 30 GB  | Nvidia L4 | 24 GB      | $0.80      |
+| 1x Nvidia L40S       |  8   | 62 GB  | Nvidia L4 | 48 GB      | $1.80      |
+| Nvidia A10G - small  |  4   | 15 GB  | Nvidia A10G| 24 GB      | $1.00      |
 
 ### Setup and Installation
 
