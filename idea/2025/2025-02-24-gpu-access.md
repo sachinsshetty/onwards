@@ -203,3 +203,28 @@ For any inquiries or further discussion, please contact:
 We appreciate your consideration and look forward to the possibility of collaborating on this exciting project.
 
 ---
+### ChangeLog v.0.0.1 - Feb 25
+
+## Automatic Speech Recognition
+
+Watch a quick demo of our project in action! Click the image below to view the video on YouTube.
+
+[![Watch the video](https://img.youtube.com/vi/F0Mo0zjyysM/0.jpg)](https://youtu.be/F0Mo0zjyysM)
+
+### OlaKrutrin Cloud Deployment
+
+- **GPU AI Pod A100 Mini**: 45 Rs/Hour
+
+- **Transcription Time**: Average of 7 seconds for 5 minutes of audio.
+- **Bandwidth Time**: Uploading local audio to the server takes approximately 80 seconds.
+- **Server Startup Time**: 5 minutes. This can be optimized with a persistent image/container to reduce downtime and improve efficiency.
+### Transcription Results
+
+| Item          | Description                                                                 |
+|---------------|-----------------------------------------------------------------------------|
+| YT Video 1    | [Navaduva Nudiye](https://www.youtube.com/watch?v=LuZzhMN8ndQ)              |
+| YT Video 2    | [Aagadu Yendu](https://www.youtube.com/watch?v=-Oryie1c-gs)                  |
+| Transcription Output 1 | [Song 1](https://github.com/slabstech/asr-indic-server/blob/main/docs/kannada_sample_3_out.md) |
+| Transcription Output 2 | [Song 2](https://github.com/slabstech/asr-indic-server/blob/main/docs/kannada_sample_4_out.md) |
+
+Note -  We converted the YouTube videos into audio files manually and then used the API.
