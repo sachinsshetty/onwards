@@ -31,11 +31,12 @@
 7. [Test Cloud Provider - OlaKrutrim Cloud](#test-cloud-provider---olakrutrim-cloud)
     - [Overview](#overview)
     - [Provider and Costs](#provider-and-costs)
-    - [Setup and Installation](#setup-and-installation)
 8. [Alternate Cloud Providers for GPU Access](#alternate-cloud-providers-for-gpu-access)
 9. [Conclusion](#conclusion)
 10. [Contact Information](#contact-information)
-11. [ChangeLog](#changelog-v001---feb-25)
+11. [ChangeLog](#changelog)
+    - [v.0.0.1- 25 feb 2025](#v001)
+
 ## Executive Summary
 
 This proposal aims to secure GPU access for a period of three months to develop and enhance a Kannada voice model. The project leverages open-source Large Language Models (LLMs) and tools provided by AI4BHARAT to build a robust voice solution comparable to industry standards set by Alexa, Siri, and Google. The project will focus on Automatic Speech Recognition (ASR), Text-to-Speech (TTS), and translation services for Indian languages, with a specific emphasis on Kannada.
@@ -157,7 +158,7 @@ The development is currently being executed on a laptop with a GTX 1060 6GB VRAM
 
 ### On-Premise GPU Setup
 
-- **Cost**: 4,000 $ for hardware and setup :  RTX 4090 - Workstation with 24GB VRAM
+- **Cost**: $4,000 for hardware and setup: RTX 4090 - Workstation with 24GB VRAM
 - **Justification**: Long-term investment for sustainable development and scalability.
 
 ### GPU Access Cost Estimation
@@ -204,10 +205,6 @@ Cost from Huggingface Spaces - Ease of Use and model close to server
 | 1x Nvidia L40S       |  8   | 62 GB  | Nvidia L4 | 48 GB      | $1.80      |
 | Nvidia A10G - small  |  4   | 15 GB  | Nvidia A10G| 24 GB      | $1.00      |
 
-### Setup and Installation
-
-The installation script runs in just 4 minutes on startup. You can find the setup script here: [ASR Indic Server Setup Script](https://github.com/slabstech/asr-indic-server/blob/server-dep/setup.sh).
-
 ## Alternate Cloud Providers for GPU Access
 
 | Cloud Provider       | GPU Model       | Price per Month | Price per Hour | Setup Cost | URL                                                                                                                          |
@@ -235,9 +232,11 @@ We appreciate your consideration and look forward to the possibility of collabor
 
 ---
 
-## ChangeLog 
+## ChangeLog
 
-### v.0.0.1 - Feb 25  Automatic Speech Recognition
+### v.0.0.1 
+    
+#### 25, Feb, 2025 :  Automatic Speech Recognition for Kannada - Demo
 
 Watch a quick demo of our project in action! Click the image below to view the video on YouTube.
 
@@ -262,7 +261,6 @@ Watch a quick demo of our project in action! Click the image below to view the v
 
 Note -  We converted the YouTube videos into audio files manually and then used the API.
 
-
 ---
 
 We appreciate your consideration and look forward to the possibility of collaborating on this exciting project.
@@ -270,3 +268,50 @@ We appreciate your consideration and look forward to the possibility of collabor
 ---
 
 [sachin]
+
+<!--
+
+### v.0.0.2
+
+- 28 Feb , 2025
+# Idea: Dhwani - Voice Mode
+
+**Running on Private Cloud Servers**
+
+## Making AI Accessible to All with 100% Privacy
+
+Dhwani is designed to be self-hosted or used via hosted services, ensuring complete privacy for all users.
+
+### Visit Our Website
+[SlabTech - Dhwani](https://slabtech.com/dhwani)
+
+## Demo Idea: Kannada Gotilla
+
+### Workflow
+
+1. **User Records Audio**:
+   - The user records an audio message.
+
+2. **ASR Service**:
+   - The Automatic Speech Recognition (ASR) service converts the audio to Kannada text.
+
+3. **Translation Service**:
+   - The translation service converts the Kannada text to the user's native language and displays it.
+
+4. **User Input in Native Language**:
+   - The user enters text in their native language.
+
+5. **Translation Service**:
+   - The translation service converts the native language text back to Kannada.
+
+6. **TTS Service**:
+   - The Text-to-Speech (TTS) service provides a response in Kannada speech.
+
+--
+
+### Setup and Installation
+
+The installation script runs in just 4 minutes on startup. You can find the setup script here: [ASR Indic Server Setup Script](https://github.com/slabstech/asr-indic-server/blob/server-dep/setup.sh).
+
+
+-->
