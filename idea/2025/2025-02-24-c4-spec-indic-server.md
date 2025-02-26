@@ -2,15 +2,13 @@
 
 This document presents the C4 model (Context, Containers, Components, and Code) for the Kannada Voice Model Development Demo. It describes the system's architecture at varying levels of detail, from its interaction with external entities to the internal code structure, aligning with the goal of creating a robust voice assistant for Kannada speakers.
 
-+----------------+       +---------------------+
-|    End User    |<----->| Kannada Voice System |
-| (Kannada       |       +---------------------+
-|  Speaker)      |       |                     |
-+----------------+       |    +------------+   |
-                         |    | AI4BHARAT  |   |
-                         |    | Datasets   |<--+
-                         |    +------------+   |
-                         +---------------------+
+## Level 1: Context Diagram
+
+```mermaid
+graph TD
+    A[End User] -->|Provides speech/text input, receives audio/text output| B[Kannada Voice System]
+    B -->|Fetches datasets for model training| C[AI4BHARAT Datasets]
+```
 
 - **End User**: A Kannada speaker interacting with the system via speech or text input.
 - **Kannada Voice System**: The core system providing ASR, TTS, and translation services.
@@ -27,33 +25,19 @@ The Container Diagram breaks the Kannada Voice System into its major deployable 
 
 ### Diagram
 
-+----------------+       +-------------------------------------+
-|    End User    |<----->|       Kannada Voice System          |
-+----------------+       |                                     |
-                         |  +----------------+               |
-                         |  | API Server     |               |
-                         |  | (Flask/FastAPI)|<---+          |
-                         |  +----------------+    |          |
-                         |  | ASR Container  |    |          |
-                         |  +----------------+    |          |
-                         |  | TTS Container  |    |          |
-                         |  +----------------+    |          |
-                         |  | Translation    |    |          |
-                         |  | Container      |    |          |
-                         |  +----------------+    |          |
-                         |                        |          |
-                         |  +----------------+    |          |
-                         |  | GPU Instance   |<---+          |
-                         |  | (e.g., RTX     |               |
-                         |  |  4090)         |               |
-                         |  +----------------+               |
-                         +-------------------------------------+
-                         |                                     |
-                         |    +------------+                  |
-                         |    | AI4BHARAT  |                  |
-                         |    | Datasets   |<-----------------+
-                         |    +------------+                  |
-                         +-------------------------------------+
+```mermaid
+graph TD
+    A[End User] -->|HTTP requests/responses| B[API Server (Flask/FastAPI)]
+    B -->|Internal API calls| C[ASR Container]
+    B -->|Internal API calls| D[TTS Container]
+    B -->|Internal API calls| E[Translation Container]
+    C -->|Leverage GPU for model execution| F[GPU Instance (e.g., RTX 4090)]
+    D -->|Leverage GPU for model execution| F
+    E -->|Leverage GPU for model execution| F
+    C -->|Fetch training data during development| G[AI4BHARAT Datasets]
+    D -->|Fetch training data during development| G
+    E -->|Fetch training data during development| G
+```
 
 - **API Server**: Handles user requests and routes them to appropriate containers.
 - **ASR Container**: Processes speech-to-text functionality.
@@ -74,51 +58,29 @@ The Component Diagram zooms into the containers, detailing the internal componen
 
 ### Diagram
 
-+-------------------------------------+
-|       Kannada Voice System          |
-|                                     |
-|  +----------------+                 |
-|  | API Server     |                 |
-|  | +------------+ |                 |
-|  | | /asr       |<---+              |
-|  | | /tts       |    |              |
-|  | | /translate |    |              |
-|  | +------------+ |  |              |
-|  +----------------+  |              |
-|                      |              |
-|  +----------------+  |              |
-|  | ASR Container  |  |              |
-|  | +------------+ |  |              |
-|  | | ASR Model  |<+  |              |
-|  | | Audio Proc.| |  |              |
-|  | +------------+ |  |              |
-|  +----------------+  |              |
-|                      |              |
-|  +----------------+  |              |
-|  | TTS Container  |  |              |
-|  | +------------+ |  |              |
-|  | | TTS Model  |<+  |              |
-|  | | Text Proc. | |  |              |
-|  | +------------+ |  |              |
-|  +----------------+  |              |
-|                      |              |
-|  +----------------+  |              |
-|  | Translation    |  |              |
-|  | Container      |  |              |
-|  | +------------+ |  |              |
-|  | | Trans Model|<-+ |              |
-|  | | Text Proc. | |  |              |
-|  | +------------+ |  |              |
-|  +----------------+  |              |
-|                      |              |
-|  +----------------+  |              |
-|  | GPU Instance   |  +------------> |
-|  | +------------+ |                 |
-|  | | PyTorch    | |                 |
-|  | | Torchaudio | |                 |
-|  | +------------+ |                 |
-|  +----------------+                 |
-+-------------------------------------+
+```mermaid
+graph TD
+    A[API Server] -->|Routes requests to specific endpoints| B[/asr]
+    A -->|Routes requests to specific endpoints| C[/tts]
+    A -->|Routes requests to specific endpoints| D[/translate]
+    B -->|Speech-to-text requests| E[ASR Container]
+    C -->|Text-to-speech requests| F[TTS Container]
+    D -->|Translation requests| G[Translation Container]
+    E -->|ASR Model| H[ASR Model]
+    E -->|Audio Processing| I[Audio Proc.]
+    F -->|TTS Model| J[TTS Model]
+    F -->|Text Processing| K[Text Proc.]
+    G -->|Translation Model| L[Trans Model]
+    G -->|Text Processing| M[Text Proc.]
+    H -->|Runs inference on GPU| N[GPU Instance]
+    I -->|Runs inference on GPU| N
+    J -->|Runs inference on GPU| N
+    K -->|Runs inference on GPU| N
+    L -->|Runs inference on GPU| N
+    M -->|Runs inference on GPU| N
+    N -->|PyTorch| O[PyTorch]
+    N -->|Torchaudio| P[Torchaudio]
+```
 
 - **API Server**:
   - **/asr**: Endpoint for speech-to-text requests.
@@ -198,9 +160,9 @@ if __name__ == "__main__":
 ## Deployment Details
 
 ### Cloud Deployment
-- **Provider**: Vast.ai or Tensor Dock.
+- **Provider**: OlaKrutrim / Hugginface
 - **GPU**: RTX 4090 (1-3 instances based on phase).
-- **OS**: Ubuntu 20.04 LTS with TensorML-20.04-LTS-PyTorch.
+- **OS**: Ubuntu 22.04 LTS
 - **Cost**: $0.5/hour, total $1,800 over 3 months.
 
 ### Development Phases

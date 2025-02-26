@@ -35,15 +35,6 @@ The Kannada Voice Model Development project aims to create a robust voice assist
 - **RAM**: 18GB minimum for data preprocessing and inference.
 - **vCPUs**: 2-4 cores for parallel processing.
 
-#### Cloud Provider Options (for Demo)
-- **Preferred**: Vast.ai or Tensor Dock
-  - GPU: RTX 4090
-  - Cost: $0.5/hour
-  - Total Estimated Cost for Demo: $120-$960 (depending on phase).
-- **Fallback**: Hyperstack Cloud or RunPod
-  - GPU: RTX A6000 or RTX 4090
-  - Cost: $0.5/hour.
-
 ### 2. Software Requirements
 
 #### Open-Source Tools
@@ -58,14 +49,14 @@ The Kannada Voice Model Development project aims to create a robust voice assist
   - Model: Fine-tuned for Kannada-to-other Indian language translation.
 
 #### Dependencies
-- **Operating System**: Ubuntu 20.04 LTS (TensorML-20.04-LTS-PyTorch recommended).
-- **Programming Language**: Python 3.8+.
+- **Operating System**: Ubuntu 22.04 LTS .
+- **Programming Language**: Python 3.10+.
 - **Libraries**:
   - PyTorch (GPU-enabled).
   - NumPy, Pandas (data handling).
   - Hugging Face Transformers (for model fine-tuning).
   - Torchaudio (audio processing).
-  - Flask or FastAPI (for server deployment).
+  - FastAPI (for server deployment).
 
 #### Dataset
 - **Source**: AI4BHARAT datasets (e.g., IndicSpeech, IndicTTS).
@@ -118,37 +109,6 @@ The Kannada Voice Model Development project aims to create a robust voice assist
 
 ---
 
-## Development Phases for Demo
-
-### Phase 1: Development and Optimization (Month 1)
-- **Duration**: 30 days.
-- **GPU Usage**: 8 hours/day, 1 GPU.
-- **Tasks**:
-  - Set up cloud GPU instance (e.g., Vast.ai RTX 4090).
-  - Fine-tune ASR, TTS, and translation models using AI4BHARAT datasets.
-  - Build basic API server for demo integration.
-- **Deliverable**: Functional prototype with ASR and TTS for Kannada.
-
-### Phase 2: Scalability Tests and Beta Demo (Month 2)
-- **Duration**: 30 days.
-- **GPU Usage**: 16 hours/day, 3 GPUs.
-- **Tasks**:
-  - Test system with 10-20 concurrent users.
-  - Optimize latency and resource usage.
-  - Add translation functionality (Kannada → Hindi).
-- **Deliverable**: Beta demo with multi-user support and translation.
-
-### Phase 3: Large-Scale Testing and Final Demo (Month 3)
-- **Duration**: 30 days.
-- **GPU Usage**: 24 hours/day, 3 GPUs.
-- **Tasks**:
-  - Simulate large-scale usage across time zones.
-  - Finalize model performance (latency < 500ms, MOS > 4.0, BLEU > 0.8).
-  - Polish UI/API for demo presentation.
-- **Deliverable**: Polished demo showcasing ASR, TTS, and translation in real-time.
-
----
-
 ## Demo Deliverables
 
 1. **Live Demonstration**:
@@ -158,17 +118,6 @@ The Kannada Voice Model Development project aims to create a robust voice assist
    - ASR latency, TTS quality (MOS), translation accuracy (BLEU).
 3. **Source Code**: GitHub repository with server and model configurations.
 4. **Documentation**: README with setup instructions and API usage.
-
----
-
-## Cost Estimation
-
-- **Total Cost**: $1,800 (as per proposal).
-- **Breakdown**:
-  - Month 1: $120 (1 GPU, 8 hours/day).
-  - Month 2: $720 (3 GPUs, 16 hours/day).
-  - Month 3: $960 (3 GPUs, 24 hours/day).
-- **Provider**: Vast.ai or Tensor Dock ($0.5/hour).
 
 ---
 

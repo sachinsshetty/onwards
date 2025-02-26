@@ -6,14 +6,18 @@
 2. [Introduction](#introduction)
     - [Background](#background)
     - [Objectives](#objectives)
-3. [Project Scope](#project-scope)
+3. [Budget](#budget)
+    - [Cloud Providers](#cloud-providers)
+    - [On-Premise GPU Setup](#on-premise-gpu-setup)
+    - [GPU Access Cost Estimation](#gpu-access-cost-estimation)
+4. [Project Scope](#project-scope)
     - [Models and Tools](#models-and-tools)
     - [Current Setup](#current-setup)
-4. [Proposed Plan](#proposed-plan)
-    - [Phase 1: Cloud Provider setup with Single GPU (1 Month)](#phase-1-cloud-provider-setup-with-single-gpu-1-month)
-    - [Phase 2: Alpha user scaling with multi-gpu setup (2 Months)](#phase-2-alpha-user-scaling-with-multi-gpu-setup-2-months)
+5. [Proposed Plan](#proposed-plan)
+    - [Phase 1: Cloud Provider setup with Single GPU](#phase-1-cloud-provider-setup-with-single-gpu)
+    - [Phase 2: Alpha user scaling with multi-gpu setup ](#phase-2-alpha-user-scaling-with-multi-gpu-setup)
     - [Phase 3: Resource Maximization and Scalability to Beta users](#phase-3-resource-maximization-and-scalability-to-beta-users)
-5. [3 Months Plan](#3-months-plan)
+6. [3 Months Plan](#3-months-plan)
     - [Key Activities](#key-activities)
         - [Month 1](#month-1)
             - [Week 1](#week-1)
@@ -24,22 +28,20 @@
             - [Week 1-4](#week-1-4)
         - [Month 3](#month-3)
             - [Week 1-4](#week-1-4)
-6. [Budget](#budget)
-    - [Cloud Providers](#cloud-providers)
-    - [On-Premise GPU Setup](#on-premise-gpu-setup)
-    - [GPU Access Cost Estimation](#gpu-access-cost-estimation)
 7. [Test Cloud Provider - OlaKrutrim Cloud](#test-cloud-provider---olakrutrim-cloud)
     - [Overview](#overview)
     - [Provider and Costs](#provider-and-costs)
 8. [Alternate Cloud Providers for GPU Access](#alternate-cloud-providers-for-gpu-access)
-9. [Conclusion](#conclusion)
-10. [Contact Information](#contact-information)
-11. [ChangeLog](#changelog)
-    - [v.0.0.1- 25 feb 2025](#v001)
+9. [Additional Reading Materials](#additional-reading-materials)
+    - [Technical Specifications](#technical-specifications)
+10. [Conclusion](#conclusion)
+11. [Contact Information](#contact-information)
+12. [ChangeLog](#changelog)
+    - [v.0.0.1 - 25 Feb 2025](#v001)
 
 ## Executive Summary
 
-This proposal aims to secure GPU access for a period of three months to develop and enhance a Kannada voice model. The project leverages open-source Large Language Models (LLMs) and tools provided by AI4BHARAT to build a robust voice solution comparable to industry standards set by Alexa, Siri, and Google. The project will focus on Automatic Speech Recognition (ASR), Text-to-Speech (TTS), and translation services for Indian languages, with a specific emphasis on Kannada.
+This proposal aims to secure GPU access for a period of three months to develop and enhance a Kannada voice model. The project leverages open-source Large Language Models (LLMs) and tools provided by AI4BHARAT to build a robust voice solution comparable to industry standards set by Alexa, Siri, and Google. The project will focus on Automatic Speech Recognition (ASR), Text-to-Speech (TTS), and translation services for Indian languages, with a specific emphasis on Kannada. We request research grant/sponsorship of $1,800 for 3 months. 
 
 ## Introduction
 
@@ -53,6 +55,36 @@ The primary objective is to integrate and enhance the following models and servi
 - **Automatic Speech Recognition (ASR)**: To convert spoken Kannada into text.
 - **Text-to-Speech (TTS)**: To convert Kannada text into natural-sounding speech.
 - **Translation Services**: To enable translation between Kannada and other Indian languages.
+
+
+## Budget
+
+### Cloud Providers
+
+- **Cost**: Estimated $1,800 for three months of cloud-based GPU access.
+- **Justification**: Necessary for initial infra setup, model optimization and performance evaluation.
+
+### On-Premise GPU Setup
+
+- **Cost**: $4,000 for hardware and setup: RTX 4090 - Workstation with 24GB VRAM
+- **Justification**: Long-term investment for sustainable development and scalability.
+
+
+### GPU Access Cost Estimation
+
+- **Total Duration**: 3 months
+- **Total Cost**: $1,800
+
+#### Cost Breakdown
+
+| Month  | Activity                                  | Users   | GPU Hours per Day | Number of GPUs | Cost per Hour/GPU ($) | Daily Cost ($) | Monthly Cost ($) |
+|--------|-------------------------------------------|---------|------------------|----------------|-------------------|----------------|------------------|
+| 1      | Development and optimization             | 1-5     | 8                | 1              | 0.5               | 4              | 120              |
+| 2      | Scalability tests and beta users         | 10-20   | 16               | 3              | 0.5               | 24             | 720              |
+| 3      | Large scale testing across timezones     | 10-20   | 24               | 3              | 0.5               | 36            | 960              |
+
+**Total Cost**
+- **Total Cost**: $120 + $720 + $960 = $1,800
 
 ## Project Scope
 
@@ -69,7 +101,7 @@ The development is currently being executed on a laptop with a GTX 1060 6GB VRAM
 
 ## Proposed Plan
 
-### Phase 1: Cloud Provider setup with Single GPU (1 Month)
+### Phase 1: Cloud Provider setup with Single GPU
 
 - **Objective**: Utilize cloud-based GPU resources to enhance the models.
 - **Actions**:
@@ -77,7 +109,7 @@ The development is currently being executed on a laptop with a GTX 1060 6GB VRAM
   - Perform initial training and testing of ASR, TTS, and translation models.
   - Evaluate the performance and make necessary adjustments.
 
-### Phase 2: Alpha user scaling with multi-gpu setup (2 Months)
+### Phase 2: Alpha user scaling with multi-gpu setup
 
 - **Objective**: Assess the feasibility of multi-GPU solutions.
 - **Actions**:
@@ -149,36 +181,6 @@ The development is currently being executed on a laptop with a GTX 1060 6GB VRAM
 - **Dataset Creation - Opt-In**: Create datasets through opt-in prompts in the app for selection.
 - **Mobile App - Setup for Voice Mode**: Develop and set up a mobile app for voice mode.
 
-## Budget
-
-### Cloud Providers
-
-- **Cost**: Estimated $1,800 for three months of cloud-based GPU access.
-- **Justification**: Necessary for initial infra setup, model optimization and performance evaluation.
-
-### On-Premise GPU Setup
-
-- **Cost**: $4,000 for hardware and setup: RTX 4090 - Workstation with 24GB VRAM
-- **Justification**: Long-term investment for sustainable development and scalability.
-
-### GPU Access Cost Estimation
-
-#### Summary
-
-- **Total Duration**: 3 months
-- **Total Cost**: $1,800
-
-#### Cost Breakdown
-
-| Month  | Activity                                  | Users   | GPU Hours per Day | Number of GPUs | Cost per Hour/GPU ($) | Daily Cost ($) | Monthly Cost ($) |
-|--------|-------------------------------------------|---------|------------------|----------------|-------------------|----------------|------------------|
-| 1      | Development and optimization             | 1-5     | 8                | 1              | 0.5               | 4              | 120              |
-| 2      | Scalability tests and beta users         | 10-20   | 16               | 3              | 0.5               | 24             | 720              |
-| 3      | Large scale testing across timezones     | 10-20   | 24               | 3              | 0.5               | 36            | 960              |
-
-**Total Cost**
-- **Total Cost**: $120 + $720 + $960 = $1,800
-
 ## Test Cloud Provider - OlaKrutrim Cloud
 
 ### Overview
@@ -215,6 +217,15 @@ Cost from Huggingface Spaces - Ease of Use and model close to server
 | Tensor Dock         | RTX 4090         | N/A             | $0.5            | N/A        | [Tensor Dock Deploy](https://dashboard.tensordock.com/deploy?gpu=geforcertx4090-pcie-24gb&gpuCount=1&ramAmount=18&vcpuCount=2&storage=80&location=c6e6ce65-b799-47e7-a465-aa0beb60d099&os=TensorML-20.04-LTS-PyTorch) |
 | Hyperstack Cloud    | RTX A6000        | N/A             | $0.5            | N/A        | [Hyperstack Cloud GPU Pricing](https://www.hyperstack.cloud/gpu-pricing)                                                     |
 | Run Pod             | RTX 4090         | N/A             | $0.5            | N/A        | [Run Pod Pricing](https://www.runpod.io/pricing)                                                                            |
+
+## Additional Reading Materials
+
+### Technical Specifications
+
+For more detailed technical specifications, please refer to the following documents:
+
+- [Technical Specifications for Indic Server](https://github.com/sachinsshetty/onwards/blob/main/idea/2025/2025-02-24-tech-spec-indic-server.md)
+- [C4 Specifications for Indic Server](https://github.com/sachinsshetty/onwards/blob/main/idea/2025/2025-02-24-c4-spec-indic-server.md)
 
 ## Conclusion
 
@@ -260,14 +271,6 @@ Watch a quick demo of our project in action! Click the image below to view the v
 | Transcription Output 2 | [Song 2](https://github.com/slabstech/asr-indic-server/blob/main/docs/kannada_sample_4_out.md) |
 
 Note -  We converted the YouTube videos into audio files manually and then used the API.
-
----
-
-We appreciate your consideration and look forward to the possibility of collaborating on this exciting project.
-
----
-
-[sachin]
 
 <!--
 
