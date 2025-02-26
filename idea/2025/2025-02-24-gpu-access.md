@@ -1,5 +1,41 @@
 # Proposal for Research Funding: GPU Access for Kannada Voice Model Development
 
+## Table of Contents
+
+1. [Executive Summary](#executive-summary)
+2. [Introduction](#introduction)
+    - [Background](#background)
+    - [Objectives](#objectives)
+3. [Project Scope](#project-scope)
+    - [Models and Tools](#models-and-tools)
+    - [Current Setup](#current-setup)
+4. [Proposed Plan](#proposed-plan)
+    - [Phase 1: Cloud Provider setup with Single GPU (1 Month)](#phase-1-cloud-provider-setup-with-single-gpu-1-month)
+    - [Phase 2: Alpha user scaling with multi-gpu setup (2 Months)](#phase-2-alpha-user-scaling-with-multi-gpu-setup-2-months)
+    - [Phase 3: Resource Maximization and Scalability to Beta users](#phase-3-resource-maximization-and-scalability-to-beta-users)
+5. [3 Months Plan](#3-months-plan)
+    - [Key Activities](#key-activities)
+        - [Month 1](#month-1)
+            - [Week 1](#week-1)
+            - [Week 2](#week-2)
+            - [Week 3](#week-3)
+            - [Week 4](#week-4)
+        - [Month 2](#month-2)
+            - [Week 1-4](#week-1-4)
+        - [Month 3](#month-3)
+            - [Week 1-4](#week-1-4)
+6. [Budget](#budget)
+    - [Cloud Providers](#cloud-providers)
+    - [On-Premise GPU Setup](#on-premise-gpu-setup)
+    - [GPU Access Cost Estimation](#gpu-access-cost-estimation)
+7. [Test Cloud Provider - OlaKrutrim Cloud](#test-cloud-provider---olakrutrim-cloud)
+    - [Overview](#overview)
+    - [Provider and Costs](#provider-and-costs)
+    - [Setup and Installation](#setup-and-installation)
+8. [Alternate Cloud Providers for GPU Access](#alternate-cloud-providers-for-gpu-access)
+9. [Conclusion](#conclusion)
+10. [Contact Information](#contact-information)
+11. [ChangeLog](#changelog-v001---feb-25)
 ## Executive Summary
 
 This proposal aims to secure GPU access for a period of three months to develop and enhance a Kannada voice model. The project leverages open-source Large Language Models (LLMs) and tools provided by AI4BHARAT to build a robust voice solution comparable to industry standards set by Alexa, Siri, and Google. The project will focus on Automatic Speech Recognition (ASR), Text-to-Speech (TTS), and translation services for Indian languages, with a specific emphasis on Kannada.
@@ -119,7 +155,7 @@ The development is currently being executed on a laptop with a GTX 1060 6GB VRAM
 - **Cost**: Estimated $1,800 for three months of cloud-based GPU access.
 - **Justification**: Necessary for initial infra setup, model optimization and performance evaluation.
 
-### On-Premise GPU Setup 
+### On-Premise GPU Setup
 
 - **Cost**: 4,000 $ for hardware and setup :  RTX 4090 - Workstation with 24GB VRAM
 - **Justification**: Long-term investment for sustainable development and scalability.
@@ -142,7 +178,6 @@ The development is currently being executed on a laptop with a GTX 1060 6GB VRAM
 **Total Cost**
 - **Total Cost**: $120 + $720 + $960 = $1,800
 
-
 ## Test Cloud Provider - OlaKrutrim Cloud
 
 ### Overview
@@ -153,14 +188,12 @@ We tested A100-NVLINK-Mini for the project. This setup is straightforward to ini
 
 OlaKrutrim is an ideal provider for this task. They charge on an hourly basis with a calculated 15-minute interval, ensuring flexibility and cost-effectiveness. There is no long-term commitment required, making it easy to start and stop as needed.
 
-
 | Instance Type         | Price (₹/hour) | GPUs | Availability | vCPUs | GPU Memory | RAM    |
 |-----------------------|----------------|------|-------------|-------|------------|--------|
 | A100-NVLINK-Mini      | ₹ 45           | 1    | Medium | 16    | 20 GB      |        |
 | A100-NVLINK-Standard-1x| ₹ 105          | 1    | Medium | 16    | 40 GB      | 60 GB  |
 | H100-NVLINK-Nano      | ₹ 83           | 1    | Medium | 16    | 20 GB      |        |
 | H100-NVLINK-Mini      | ₹ 124          | 1    | Medium      | 16    | 40 GB      | 60 GB  |
-
 
 Cost from Huggingface Spaces - Ease of Use and model close to server
 
@@ -175,7 +208,6 @@ Cost from Huggingface Spaces - Ease of Use and model close to server
 
 The installation script runs in just 4 minutes on startup. You can find the setup script here: [ASR Indic Server Setup Script](https://github.com/slabstech/asr-indic-server/blob/server-dep/setup.sh).
 
-
 ## Alternate Cloud Providers for GPU Access
 
 | Cloud Provider       | GPU Model       | Price per Month | Price per Hour | Setup Cost | URL                                                                                                                          |
@@ -186,7 +218,6 @@ The installation script runs in just 4 minutes on startup. You can find the setu
 | Tensor Dock         | RTX 4090         | N/A             | $0.5            | N/A        | [Tensor Dock Deploy](https://dashboard.tensordock.com/deploy?gpu=geforcertx4090-pcie-24gb&gpuCount=1&ramAmount=18&vcpuCount=2&storage=80&location=c6e6ce65-b799-47e7-a465-aa0beb60d099&os=TensorML-20.04-LTS-PyTorch) |
 | Hyperstack Cloud    | RTX A6000        | N/A             | $0.5            | N/A        | [Hyperstack Cloud GPU Pricing](https://www.hyperstack.cloud/gpu-pricing)                                                     |
 | Run Pod             | RTX 4090         | N/A             | $0.5            | N/A        | [Run Pod Pricing](https://www.runpod.io/pricing)                                                                            |
-
 
 ## Conclusion
 
@@ -203,9 +234,10 @@ For any inquiries or further discussion, please contact:
 We appreciate your consideration and look forward to the possibility of collaborating on this exciting project.
 
 ---
-### ChangeLog v.0.0.1 - Feb 25
 
-## Automatic Speech Recognition
+## ChangeLog 
+
+### v.0.0.1 - Feb 25  Automatic Speech Recognition
 
 Watch a quick demo of our project in action! Click the image below to view the video on YouTube.
 
@@ -218,13 +250,23 @@ Watch a quick demo of our project in action! Click the image below to view the v
 - **Transcription Time**: Average of 7 seconds for 5 minutes of audio.
 - **Bandwidth Time**: Uploading local audio to the server takes approximately 80 seconds.
 - **Server Startup Time**: 5 minutes. This can be optimized with a persistent image/container to reduce downtime and improve efficiency.
+
 ### Transcription Results
 
 | Item          | Description                                                                 |
 |---------------|-----------------------------------------------------------------------------|
 | YT Video 1    | [Navaduva Nudiye](https://www.youtube.com/watch?v=LuZzhMN8ndQ)              |
-| YT Video 2    | [Aagadu Yendu](https://www.youtube.com/watch?v=-Oryie1c-gs)                  |
+| YT Video 2    | [Aagadu Yendu](https://www.youtube.com/watch?v=-Oryie1c-gs)                 |
 | Transcription Output 1 | [Song 1](https://github.com/slabstech/asr-indic-server/blob/main/docs/kannada_sample_3_out.md) |
 | Transcription Output 2 | [Song 2](https://github.com/slabstech/asr-indic-server/blob/main/docs/kannada_sample_4_out.md) |
 
 Note -  We converted the YouTube videos into audio files manually and then used the API.
+
+
+---
+
+We appreciate your consideration and look forward to the possibility of collaborating on this exciting project.
+
+---
+
+[sachin]
