@@ -71,3 +71,39 @@ Dhwani - Research Milestone
 - **Dataset Creation - Opt-In**: Create datasets through opt-in prompts in the app for selection.
 - **Mobile App - Setup for Voice Mode**: Develop and set up a mobile app for voice mode.
 
+
+
+Todo  MLOps
+
+Observe speed of inference 
+
+Build online measurable document 
+
+Make app - production grade 
+
+Stres test - provide fast failure and feeback 
+
+More than 15 secs / 
+Fail fast for unpaid / unlogged users 
+
+Build ddos / ip- tracking for load testing 
+
+Netflix / perplexity style building of feature and release 
+
+Build demo examples / jupyter notebook
+
+Api key - bearer key management 
+
+User management with fastapi and react/ material ui
+
+
+Federated learning - 
+
+Caching for tts 
+
+Langfuse/posthog 
+
+Add analytics for all services 
+
+
+
