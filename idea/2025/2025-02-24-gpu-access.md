@@ -91,8 +91,8 @@ The primary objective is to integrate and enhance the following models and servi
 ### Models and Tools
 
 The project will utilize the following open-source tools:
-- **ASR**: [ASR Indic Server](https://github.com/slabstech/asr-indic-server)
-- **TTS**: [Parler TTS Server](https://github.com/slabstech/parler-tts-server)
+- **Automatic Speech Recognition : ASR**: [ASR Indic Server](https://github.com/slabstech/asr-indic-server)
+- **Text to Speech : TTS**: [TTS  Indic Server](https://github.com/slabstech/tts-indic-server)
 - **Translation**: [Indic Translate Server](https://github.com/slabstech/indic-translate-server)
 
 ### Current Setup
@@ -253,13 +253,46 @@ Watch a quick demo of our project in action! Click the image below to view the v
 
 [![Watch the video](https://img.youtube.com/vi/F0Mo0zjyysM/0.jpg)](https://youtu.be/F0Mo0zjyysM)
 
-### OlaKrutrin Cloud Deployment
+We have hosted an Automatic Speech Recognition (ASR) service that can be used to verify the accuracy of audio transcriptions. The service is available in two modes:
 
-- **GPU AI Pod A100 Mini**: 45 Rs/Hour
+#### High Latency, Slow System (Available 24/7)
+- **URL**: [High Latency ASR Service](https://huggingface.co/spaces/gaganyatri/asr_indic_server_cpu)
 
-- **Transcription Time**: Average of 7 seconds for 5 minutes of audio.
-- **Bandwidth Time**: Uploading local audio to the server takes approximately 80 seconds.
-- **Server Startup Time**: 5 minutes. This can be optimized with a persistent image/container to reduce downtime and improve efficiency.
+#### Low Latency, Fast System (Available on Request)
+- **URL**: [Low Latency ASR Service](https://huggingface.co/spaces/gaganyatri/asr_indic_server_cpu)
+
+### How to Use the Service
+
+1. With curl
+
+You can test the service using `curl` commands. Below are examples for both service modes:
+
+#### High Latency Service
+
+```sh curl_high_latency.sh
+curl -X 'POST' \
+  'https://gaganyatri-asr-indic-server-cpu.hf.space/transcribe/?language=kannada' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'file=@samples/kannada_sample_2.wav;type=audio/x-wav'
+```
+
+#### Low Latency Service
+
+```sh curl_low_latency.sh
+curl -X 'POST' \
+  'https://gaganyatri-asr-indic-server.hf.space/transcribe/?language=kannada' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'file=@samples/kannada_sample_2.wav;type=audio/x-wav'
+```
+
+2. Via Swagger UI 
+
+- **URL**: [High Latency ASR Service](https://huggingface.co/spaces/gaganyatri/asr_indic_server_cpu)
+
+- **URL**: [Low Latency ASR Service](https://huggingface.co/spaces/gaganyatri/asr_indic_server_cpu)
+
 
 ### Transcription Results
 
@@ -271,6 +304,45 @@ Watch a quick demo of our project in action! Click the image below to view the v
 | Transcription Output 2 | [Song 2](https://github.com/slabstech/asr-indic-server/blob/main/docs/kannada_sample_4_out.md) |
 
 Note -  We converted the YouTube videos into audio files manually and then used the API.
+
+### v.0.0.2
+    
+#### 27, Feb, 2025 :  Text to Speech for Kannada - Demo
+
+
+We have hosted a Text to Speech (TTS) service that can be used to verify the accuracy of Speech generation. The service is available in two modes:
+
+### High Latency, Slow System (Available 24/7)
+- **URL**: [High Latency TTS Service](https://huggingface.co/spaces/gaganyatri/tts_indic_server_cpu)
+
+### Low Latency, Fast System (Available on Request)
+- **URL**: [Low Latency TTS Service](https://huggingface.co/spaces/gaganyatri/tts_indic_server)
+
+## Usage
+
+### How to Use the Service
+
+You can test the service using `curl` commands. Below are examples for both service modes:
+
+#### High Latency Service
+
+```bash kannada_example.sh
+curl -X 'POST' \
+  'https://gaganyatri-tts-indic-server.hf.space/v1/audio/speech' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{"input": "ಉದ್ಯಾನದಲ್ಲಿ ಮಕ್ಕಳ ಆಟವಾಡುತ್ತಿದ್ದಾರೆ ಮತ್ತು ಪಕ್ಷಿಗಳು ಚಿಲಿಪಿಲಿ ಮಾಡುತ್ತಿವೆ.", "voice": "A female speaker delivers a slightly expressive and animated speech with a moderate speed and pitch. The recording is of very high quality, with the speakers voice sounding clear and very close up."}'  -o audio_kannada_gpu_cloud.mp3
+```
+
+#### Low Latency Service
+
+```bash kannada_example.sh
+curl -X 'POST' \
+  'https://gaganyatri-tts-indic-server-cpu.hf.space/v1/audio/speech' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{"input": "ಉದ್ಯಾನದಲ್ಲಿ ಮಕ್ಕಳ ಆಟವಾಡುತ್ತಿದ್ದಾರೆ ಮತ್ತು ಪಕ್ಷಿಗಳು ಚಿಲಿಪಿಲಿ ಮಾಡುತ್ತಿವೆ.", "voice": "A female speaker delivers a slightly expressive and animated speech with a moderate speed and pitch. The recording is of very high quality, with the speakers voice sounding clear and very close up."}'  -o audio_kannada_cpu_cloud.mp3
+```
 
 <!--
 
