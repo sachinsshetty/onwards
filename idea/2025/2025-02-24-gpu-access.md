@@ -1,4 +1,4 @@
-# Proposal for Research Funding: GPU Access for Kannada Voice Model Development
+# Project Dhwani : Proposal for Research Funding: GPU Access for Kannada Voice Model Development
 
 ## Table of Contents
 
@@ -17,26 +17,16 @@
     - [Phase 1: Cloud Provider setup with Single GPU](#phase-1-cloud-provider-setup-with-single-gpu)
     - [Phase 2: Alpha user scaling with multi-gpu setup ](#phase-2-alpha-user-scaling-with-multi-gpu-setup)
     - [Phase 3: Resource Maximization and Scalability to Beta users](#phase-3-resource-maximization-and-scalability-to-beta-users)
-6. [3 Months Plan](#3-months-plan)
-    - [Key Activities](#key-activities)
-        - [Month 1](#month-1)
-            - [Week 1](#week-1)
-            - [Week 2](#week-2)
-            - [Week 3](#week-3)
-            - [Week 4](#week-4)
-        - [Month 2](#month-2)
-            - [Week 1-4](#week-1-4)
-        - [Month 3](#month-3)
-            - [Week 1-4](#week-1-4)
-7. [Test Cloud Provider - OlaKrutrim Cloud](#test-cloud-provider---olakrutrim-cloud)
+6. [Test Cloud Provider - OlaKrutrim Cloud](#test-cloud-provider---olakrutrim-cloud)
     - [Overview](#overview)
     - [Provider and Costs](#provider-and-costs)
-8. [Alternate Cloud Providers for GPU Access](#alternate-cloud-providers-for-gpu-access)
-9. [Additional Reading Materials](#additional-reading-materials)
+7. [Alternate Cloud Providers for GPU Access](#alternate-cloud-providers-for-gpu-access)
+7. [Additional Reading Materials](#additional-reading-materials)
+    - [Dhwani - 3 months Milestone Document](#dhwani---3-month---milestone-plan)
     - [Technical Specifications](#technical-specifications)
-10. [Conclusion](#conclusion)
-11. [Contact Information](#contact-information)
-12. [ChangeLog](#changelog)
+9. [Conclusion](#conclusion)
+10. [Contact Information](#contact-information)
+11. [ChangeLog](#changelog)
     - [v.0.0.1 - 25 Feb 2025](#v001)
     - [v.0.0.2 - 26 Feb 2025](#v002)
     - [v.0.0.3 - 27 Feb 2025](#v003)
@@ -44,7 +34,7 @@
 
 ## Executive Summary
 
-This proposal aims to secure GPU access for a period of three months to develop and enhance a Kannada voice model. The project leverages open-source Large Language Models (LLMs) and tools provided by AI4BHARAT to build a robust voice solution comparable to industry standards set by Alexa, Siri, and Google. The project will focus on Automatic Speech Recognition (ASR), Text-to-Speech (TTS), and translation services for Indian languages, with a specific emphasis on Kannada. We request research grant/sponsorship of $1,800 for 3 months. 
+This proposal for Project Dhwani aims to secure GPU access for a period of three months to develop and enhance a Kannada voice model. The project leverages open-source Large Language Models (LLMs) and tools provided by AI4BHARAT to build a robust voice solution comparable to industry standards set by Alexa, Siri, and Google. The project will focus on Automatic Speech Recognition (ASR), Text-to-Speech (TTS), and translation services for Indian languages, with a specific emphasis on Kannada. We request research grant/sponsorship of $1,800 for 3 months. 
 
 ## Introduction
 
@@ -75,9 +65,6 @@ The primary objective is to integrate and enhance the following models and servi
 
 ### GPU Access Cost Estimation
 
-- **Total Duration**: 3 months
-- **Total Cost**: $1,800
-
 #### Cost Breakdown
 
 | Month  | Activity                                  | Users   | GPU Hours per Day | Number of GPUs | Cost per Hour/GPU ($) | Daily Cost ($) | Monthly Cost ($) |
@@ -101,6 +88,9 @@ The project will utilize the following open-source tools:
 ### Current Setup
 
 The development is currently being executed on a laptop with a GTX 1060 6GB VRAM. However, to ensure robustness and scalability, additional GPU resources are required.
+
+- [Live Demo setup for Dhwani](https://huggingface.co/spaces/gaganyatri/dhwani)
+
 
 ## Proposed Plan
 
@@ -127,79 +117,12 @@ The development is currently being executed on a laptop with a GTX 1060 6GB VRAM
   - Adjust the project plan as needed to ensure efficient use of resources.
   - Seek additional funding or resources based on project progress and demand.
 
-## 3 Months Plan
 
-### Key Activities
-
-- **Scaling and Verifying Concurrent Users**: Ensure the system can handle multiple users simultaneously.
-- **Rate Limiting**: Implement measures to control the rate of requests to prevent system overload.
-- **Multi-Language Support - Batching**: Enable support for multiple languages and optimize processing through batching.
-- **Immersive Voice Mode**: Develop a mode for teaching, entertainment, and exploration with system prompts.
-- **Fine-Tuning Models**: Continuously improve the models based on feedback and performance data.
-- **Automated Red Teaming**: Simulate attacks to test and improve the system's security.
-- **Weekly Progress Updates**: Provide updates on techniques tried, comparisons against top providers, and cost metrics.
-
-### Month 1
-
-#### Week 1
-- **API Standards**: Define and implement API standards for the project.
-- **Logging and Automatic Configuration of GPU**: Set up logging and automatic configuration for GPU resources.
-
-#### Week 2
-- **Performance Measurement**: Measure the performance of the models.
-- **Eval Benchmarks**: Establish benchmarks for evaluation and comparison.
-
-#### Week 3
-- **Encryption and Privacy Management**: Implement encryption and privacy management protocols.
-
-#### Week 4
-- **Delta Updates to Models**: Apply delta updates to the models for continuous improvement.
-- **RLHF and Federated Learning**: Implement Reinforcement Learning from Human Feedback (RLHF) and federated learning techniques.
-- **Open Data Collection**: Collect open data for training and validation.
-- **Weekly Cost Metrics Export**: Export and analyze weekly cost metrics.
-- **Newsletter Enrollment**: Enroll users in a newsletter for regular updates and engagement.
-
-### Month 2
-
-#### Week 1-4
-- **Scaling and Verifying Concurrent Users**: Test and verify the system's ability to handle multiple users.
-- **Rate Limiting**: Implement rate limiting to manage system load.
-- **Multi-Language Support - Batching**: Develop support for multiple languages and optimize through batching.
-- **Immersive Voice Mode**: Create an immersive voice mode for various applications.
-- **Fine-Tuning Models**: Continuously fine-tune the models based on performance data.
-- **Automated Red Teaming**: Simulate attacks to identify and fix vulnerabilities.
-- **Community Work Plan**: Engage with the community for feedback and support.
-- **Feature Requests and Pull Request Management**: Manage feature requests and pull requests from the community.
-- **Fixed Schedule of Uptime and Test Plans**: Establish a fixed schedule for uptime and test plans.
-- **3rd Party Integration**: Integrate with third-party services and platforms.
-
-### Month 3
-
-#### Week 1-4
-- **Resource Maximization**: Optimize resource usage for scalability.
-- **Performance Monitoring**: Continuously monitor performance and make necessary adjustments.
-- **Beta User Release**: Prepare for and execute the release to beta users.
-- **Weekly Progress Updates**: Continue providing weekly updates on progress and cost metrics.
-- **Batch Optimization Framework**: Develop a framework for batch optimization, focusing on lecture conversion and archival work.
-- **Dataset Creation - Opt-In**: Create datasets through opt-in prompts in the app for selection.
-- **Mobile App - Setup for Voice Mode**: Develop and set up a mobile app for voice mode.
-
-## Test Cloud Provider - OlaKrutrim Cloud
-
-### Overview
-
-We tested A100-NVLINK-Mini for the project. This setup is straightforward to initiate and deploy for basic inference tasks.
+## Test Cloud Provider - Huggingface Spaces, OlaKrutrim Cloud
 
 ### Provider and Costs
 
-OlaKrutrim is an ideal provider for this task. They charge on an hourly basis with a calculated 15-minute interval, ensuring flexibility and cost-effectiveness. There is no long-term commitment required, making it easy to start and stop as needed.
-
-| Instance Type         | Price (₹/hour) | GPUs | Availability | vCPUs | GPU Memory | RAM    |
-|-----------------------|----------------|------|-------------|-------|------------|--------|
-| A100-NVLINK-Mini      | ₹ 45           | 1    | Medium | 16    | 20 GB      |        |
-| A100-NVLINK-Standard-1x| ₹ 105          | 1    | Medium | 16    | 40 GB      | 60 GB  |
-| H100-NVLINK-Nano      | ₹ 83           | 1    | Medium | 16    | 20 GB      |        |
-| H100-NVLINK-Mini      | ₹ 124          | 1    | Medium      | 16    | 40 GB      | 60 GB  |
+- Huggingface Spaces
 
 Cost from Huggingface Spaces - Ease of Use and model close to server
 
@@ -209,6 +132,17 @@ Cost from Huggingface Spaces - Ease of Use and model close to server
 | 1x Nvidia L4         |  8   | 30 GB  | Nvidia L4 | 24 GB      | $0.80      |
 | 1x Nvidia L40S       |  8   | 62 GB  | Nvidia L4 | 48 GB      | $1.80      |
 | Nvidia A10G - small  |  4   | 15 GB  | Nvidia A10G| 24 GB      | $1.00      |
+
+- OlaKrutrim Cloud
+
+| Instance Type         | Price (₹/hour) | GPUs | Availability | vCPUs | GPU Memory | RAM    |
+|-----------------------|----------------|------|-------------|-------|------------|--------|
+| A100-NVLINK-Mini      | ₹ 45           | 1    | Medium | 16    | 20 GB      |        |
+| A100-NVLINK-Standard-1x| ₹ 105          | 1    | Medium | 16    | 40 GB      | 60 GB  |
+| H100-NVLINK-Nano      | ₹ 83           | 1    | Medium | 16    | 20 GB      |        |
+| H100-NVLINK-Mini      | ₹ 124          | 1    | Medium      | 16    | 40 GB      | 60 GB  |
+
+- WIP - [Cloud provider benchmark document](https://github.com/sachinsshetty/onwards/blob/main/idea/2025/2025-02-27-cloud-provider-benchmarks.md)
 
 ## Alternate Cloud Providers for GPU Access
 
@@ -222,6 +156,10 @@ Cost from Huggingface Spaces - Ease of Use and model close to server
 | Run Pod             | RTX 4090         | N/A             | $0.5            | N/A        | [Run Pod Pricing](https://www.runpod.io/pricing)                                                                            |
 
 ## Additional Reading Materials
+
+### Dhwani - 3 month - Milestone plan
+
+[Dhwani Research Milestone document](https://github.com/sachinsshetty/onwards/blob/main/idea/2025/2025-02-27-dhwani-research-milestones)
 
 ### Technical Specifications
 
@@ -238,7 +176,10 @@ This proposal aims to secure GPU access for three months to develop a robust Kan
 
 For any inquiries or further discussion, please contact:
 
-[sachin]
+- [sachin]
+
+- To collaborate immediately with code, feedback, issues : Join our [Discord Server](https://discord.gg/WZMCerEZ2P)
+    - Clear, Small Pull Requests for [Milestones](https://github.com/sachinsshetty/onwards/blob/main/idea/2025/2025-02-27-dhwani-research-milestones) - are worth its weight in Gold
 
 ---
 
@@ -251,44 +192,6 @@ We appreciate your consideration and look forward to the possibility of collabor
 ### v.0.0.1 
     
 #### 25, Feb, 2025 :  Automatic Speech Recognition for Kannada - Demo
-
-Watch a quick demo of our project in action! Click the image below to view the video on YouTube.
-
-[![Watch the video](https://img.youtube.com/vi/F0Mo0zjyysM/0.jpg)](https://youtu.be/F0Mo0zjyysM)
-
-We have hosted an Automatic Speech Recognition (ASR) service that can be used to verify the accuracy of audio transcriptions. The service is available in two modes:
-
-### How to Use the Service
-
-1. With curl
-
-You can test the service using `curl` commands. Below are examples for both service modes:
-
-#### High Latency Service - CPU server
-
-```sh curl_high_latency.sh
-curl -X 'POST' \
-  'https://gaganyatri-asr-indic-server-cpu.hf.space/transcribe/?language=kannada' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: multipart/form-data' \
-  -F 'file=@samples/kannada_sample_2.wav;type=audio/x-wav'
-```
-
-#### Low Latency Service - GPU service on Demand
-
-```sh curl_low_latency.sh
-curl -X 'POST' \
-  'https://gaganyatri-asr-indic-server.hf.space/transcribe/?language=kannada' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: multipart/form-data' \
-  -F 'file=@samples/kannada_sample_2.wav;type=audio/x-wav'
-```
-
-2. Via Swagger UI 
-
-- **URL**: [High Latency ASR Service](https://huggingface.co/spaces/gaganyatri/asr_indic_server_cpu)
-
-- **URL**: [Low Latency ASR Service](https://huggingface.co/spaces/gaganyatri/asr_indic_server_cpu)
 
 
 ### Transcription Results
@@ -307,62 +210,15 @@ Note -  We converted the YouTube videos into audio files manually and then used 
 #### 27, Feb, 2025 :  Text to Speech for Kannada - Demo
 
 
-We have hosted a Text to Speech (TTS) service that can be used to verify the accuracy of Speech generation. The service is available in two modes:
+### v0.0.3 
 
-## Usage
+###$ 27, Feb 2025 - TTS + ASR
 
-### How to Use the Service
-
-You can test the service using `curl` commands. Below are examples for both service modes:
-
-#### High Latency Service
-
-```bash kannada_example.sh
-curl -X 'POST' \
-  'https://gaganyatri-tts-indic-server.hf.space/v1/audio/speech' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: application/json' \
-  -d '{"input": "ಉದ್ಯಾನದಲ್ಲಿ ಮಕ್ಕಳ ಆಟವಾಡುತ್ತಿದ್ದಾರೆ ಮತ್ತು ಪಕ್ಷಿಗಳು ಚಿಲಿಪಿಲಿ ಮಾಡುತ್ತಿವೆ.", "voice": "A female speaker delivers a slightly expressive and animated speech with a moderate speed and pitch. The recording is of very high quality, with the speakers voice sounding clear and very close up."}'  -o audio_kannada_gpu_cloud.mp3
-```
-
-#### Low Latency Service
-
-```bash kannada_example.sh
-curl -X 'POST' \
-  'https://gaganyatri-tts-indic-server-cpu.hf.space/v1/audio/speech' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: application/json' \
-  -d '{"input": "ಉದ್ಯಾನದಲ್ಲಿ ಮಕ್ಕಳ ಆಟವಾಡುತ್ತಿದ್ದಾರೆ ಮತ್ತು ಪಕ್ಷಿಗಳು ಚಿಲಿಪಿಲಿ ಮಾಡುತ್ತಿವೆ.", "voice": "A female speaker delivers a slightly expressive and animated speech with a moderate speed and pitch. The recording is of very high quality, with the speakers voice sounding clear and very close up."}'  -o audio_kannada_cpu_cloud.mp3
-```
-
-##@ v0.0.3 
-
-### 27, Feb 2025 - TTS + ASR
-
-
-Test  TTS + ASR for easy verification. 
-Test it on terminal/command line /  postman / Insomnia 
-
-
-1. Use the Text to Speech (TTS) to generate the speech by providing Kannada text. It creates a .wav file with name "audio_kannada_gpu_cloud.wav"
-```
-curl -X 'POST' \
-  'https://gaganyatri-tts-indic-server.hf.space/v1/audio/speech' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: application/json' \
-  -d '{"input": "ಉದ್ಯಾನದಲ್ಲಿ ಮಕ್ಕಳ ಆಟವಾಡುತ್ತಿದ್ದಾರೆ ಮತ್ತು ಪಕ್ಷಿಗಳು ಚಿಲಿಪಿಲಿ ಮಾಡುತ್ತಿವೆ.", "voice": "A female speaker delivers a slightly expressive and animated speech with a moderate speed and pitch. The recording is of very high quality, with the speakers voice sounding clear and very close up.",, "response_type": "wav"}'  -o audio_kannada_gpu_cloud.wav
-
-```
-
-2. Now call the ASR - Automatic Speech Recognition by passing the Generated Speech 
-```
-curl -X 'POST' \
-  'https://gaganyatri-asr-indic-server-cpu.hf.space/transcribe/?language=kannada' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: multipart/form-data' \
-  -F 'file=@audio_kannada_gpu_cloud.wav;type=audio/x-wav'
-```
-
+1. update project title - Dhwani
+2. Moved 3 months detailed plan to - [Dhwani Research Milestones document](https://github.com/sachinsshetty/onwards/blob/main/idea/2025/2025-02-27-dhwani-research-milestones)
+3. Update Current Setup - To add - live server deployment on Huggingface spaces
+4. Deployment of Translate service to Huggingface Server
+5. Start cloud provider benchmark documents
 
 <!--
 
