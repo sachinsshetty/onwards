@@ -38,6 +38,9 @@
 11. [Contact Information](#contact-information)
 12. [ChangeLog](#changelog)
     - [v.0.0.1 - 25 Feb 2025](#v001)
+    - [v.0.0.2 - 26 Feb 2025](#v002)
+    - [v.0.0.3 - 27 Feb 2025](#v003)
+
 
 ## Executive Summary
 
@@ -255,19 +258,13 @@ Watch a quick demo of our project in action! Click the image below to view the v
 
 We have hosted an Automatic Speech Recognition (ASR) service that can be used to verify the accuracy of audio transcriptions. The service is available in two modes:
 
-#### High Latency, Slow System (Available 24/7)
-- **URL**: [High Latency ASR Service](https://huggingface.co/spaces/gaganyatri/asr_indic_server_cpu)
-
-#### Low Latency, Fast System (Available on Request)
-- **URL**: [Low Latency ASR Service](https://huggingface.co/spaces/gaganyatri/asr_indic_server_cpu)
-
 ### How to Use the Service
 
 1. With curl
 
 You can test the service using `curl` commands. Below are examples for both service modes:
 
-#### High Latency Service
+#### High Latency Service - CPU server
 
 ```sh curl_high_latency.sh
 curl -X 'POST' \
@@ -277,7 +274,7 @@ curl -X 'POST' \
   -F 'file=@samples/kannada_sample_2.wav;type=audio/x-wav'
 ```
 
-#### Low Latency Service
+#### Low Latency Service - GPU service on Demand
 
 ```sh curl_low_latency.sh
 curl -X 'POST' \
@@ -312,12 +309,6 @@ Note -  We converted the YouTube videos into audio files manually and then used 
 
 We have hosted a Text to Speech (TTS) service that can be used to verify the accuracy of Speech generation. The service is available in two modes:
 
-### High Latency, Slow System (Available 24/7)
-- **URL**: [High Latency TTS Service](https://huggingface.co/spaces/gaganyatri/tts_indic_server_cpu)
-
-### Low Latency, Fast System (Available on Request)
-- **URL**: [Low Latency TTS Service](https://huggingface.co/spaces/gaganyatri/tts_indic_server)
-
 ## Usage
 
 ### How to Use the Service
@@ -343,6 +334,35 @@ curl -X 'POST' \
   -H 'Content-Type: application/json' \
   -d '{"input": "ಉದ್ಯಾನದಲ್ಲಿ ಮಕ್ಕಳ ಆಟವಾಡುತ್ತಿದ್ದಾರೆ ಮತ್ತು ಪಕ್ಷಿಗಳು ಚಿಲಿಪಿಲಿ ಮಾಡುತ್ತಿವೆ.", "voice": "A female speaker delivers a slightly expressive and animated speech with a moderate speed and pitch. The recording is of very high quality, with the speakers voice sounding clear and very close up."}'  -o audio_kannada_cpu_cloud.mp3
 ```
+
+##@ v0.0.3 
+
+### 27, Feb 2025 - TTS + ASR
+
+
+Test  TTS + ASR for easy verification. 
+Test it on terminal/command line /  postman / Insomnia 
+
+
+1. Use the Text to Speech (TTS) to generate the speech by providing Kannada text. It creates a .wav file with name "audio_kannada_gpu_cloud.wav"
+```
+curl -X 'POST' \
+  'https://gaganyatri-tts-indic-server.hf.space/v1/audio/speech' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{"input": "ಉದ್ಯಾನದಲ್ಲಿ ಮಕ್ಕಳ ಆಟವಾಡುತ್ತಿದ್ದಾರೆ ಮತ್ತು ಪಕ್ಷಿಗಳು ಚಿಲಿಪಿಲಿ ಮಾಡುತ್ತಿವೆ.", "voice": "A female speaker delivers a slightly expressive and animated speech with a moderate speed and pitch. The recording is of very high quality, with the speakers voice sounding clear and very close up.",, "response_type": "wav"}'  -o audio_kannada_gpu_cloud.wav
+
+```
+
+2. Now call the ASR - Automatic Speech Recognition by passing the Generated Speech 
+```
+curl -X 'POST' \
+  'https://gaganyatri-asr-indic-server-cpu.hf.space/transcribe/?language=kannada' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'file=@audio_kannada_gpu_cloud.wav;type=audio/x-wav'
+```
+
 
 <!--
 
