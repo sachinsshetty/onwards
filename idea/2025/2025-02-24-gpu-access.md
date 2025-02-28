@@ -30,7 +30,7 @@
     - [v.0.0.1 - 25 Feb 2025](#v001)
     - [v.0.0.2 - 26 Feb 2025](#v002)
     - [v.0.0.3 - 27 Feb 2025](#v003)
-
+    - [v.0.0.4 - 28 Feb 2025](#v004)
 
 ## Executive Summary
 
@@ -49,6 +49,11 @@ The primary objective is to integrate and enhance the following models and servi
 - **Text-to-Speech (TTS)**: To convert Kannada text into natural-sounding speech.
 - **Translation Services**: To enable translation between Kannada and other Indian languages.
 
+## Target Solution
+
+| Answer Engine                                  | Voice Translation                          |
+|-----------------------------------------------|---------------------------------------------|
+| ![Answer Engine](kannada-answer-engine.drawio.png "Engine") | ![Voice Translation](voice-translation.drawio.png "Voice Translation") |
 
 ## Budget
 
@@ -217,12 +222,21 @@ Note -  We converted the YouTube videos into audio files manually and then used 
 
 ### v0.0.3 
 
-###$ 27, Feb 2025 - TTS + ASR
+#### 27, Feb 2025 - TTS + ASR
 
 1. update project title - Dhwani
 2. Moved 3 months detailed plan to - [Dhwani Research Milestones document](https://github.com/sachinsshetty/onwards/blob/main/idea/2025/2025-02-27-dhwani-research-milestones)
 3. Deployment of Translate service to [Huggingface Spaces](https://huggingface.co/spaces/gaganyatri/translate_indic_server_cpu) 
 4. Start work on cloud provider benchmark documents
+
+### v0.0.4
+
+#### 28, Feb 2025 - Live Demo
+
+1. Add two target Solution 
+2. [Voice Translation Demo](https://huggingface.co/spaces/gaganyatri/dhwani)
+3. [Real time Answer Engine](https://huggingface.co/spaces/gaganyatri/dhwani-answer)
+
 
 <!--
 
