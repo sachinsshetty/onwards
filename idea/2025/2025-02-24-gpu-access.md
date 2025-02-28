@@ -17,7 +17,7 @@
     - [Phase 1: Cloud Provider setup with Single GPU](#phase-1-cloud-provider-setup-with-single-gpu)
     - [Phase 2: Alpha user scaling with multi-gpu setup ](#phase-2-alpha-user-scaling-with-multi-gpu-setup)
     - [Phase 3: Resource Maximization and Scalability to Beta users](#phase-3-resource-maximization-and-scalability-to-beta-users)
-6. [Test Cloud Provider - OlaKrutrim Cloud](#test-cloud-provider---olakrutrim-cloud)
+6. [Test Cloud Provider](#test-cloud-provider)
     - [Overview](#overview)
     - [Provider and Costs](#provider-and-costs)
 7. [Alternate Cloud Providers for GPU Access](#alternate-cloud-providers-for-gpu-access)
@@ -79,12 +79,13 @@ The primary objective is to integrate and enhance the following models and servi
 ## Project Scope
 
 ### Models and Tools
-
 The project will utilize the following open-source tools:
-- **Automatic Speech Recognition : ASR**: [ASR Indic Server](https://github.com/slabstech/asr-indic-server)
-- **Text to Speech : TTS**: [TTS  Indic Server](https://github.com/slabstech/tts-indic-server)
-- **Translation**: [Indic Translate Server](https://github.com/slabstech/indic-translate-server)
 
+| Open-Source Tool                       | Source Repository                                          | CPU Deployment | GPU Deployment |
+|---------------------------------------|-------------------------------------------------------------|----------------|----------------|
+| Automatic Speech Recognition : ASR   | [ASR Indic Server](https://github.com/slabstech/asr-indic-server) | [Available 24/7 - Free, Slow](https://huggingface.co/spaces/gaganyatri/asr_indic_server_cpu) |  [Paused, On-demand, $.05 /hour](https://huggingface.co/spaces/gaganyatri/asr_indic_server)  |
+| Text to Speech : TTS                  | [TTS Indic Server](https://github.com/slabstech/tts-indic-server)  | [Available 24/7 - Free, Slow](https://huggingface.co/spaces/gaganyatri/tts_indic_server_cpu)            | [Paused, On-demand, $.05 /hour](https://huggingface.co/spaces/gaganyatri/asr_indic_server) |
+| Translation                           | [Indic Translate Server](https://github.com/slabstech/indic-translate-server) | [Available 24/7 - Free, Slow](https://huggingface.co/spaces/gaganyatri/translate_indic_server_cpu)          | [Paused, On-demand, $.05 /hour](https://huggingface.co/spaces/gaganyatri/translate_indic_server)            |
 ### Current Setup
 
 The development is currently being executed on a laptop with a GTX 1060 6GB VRAM. However, to ensure robustness and scalability, additional GPU resources are required.
@@ -118,7 +119,10 @@ The development is currently being executed on a laptop with a GTX 1060 6GB VRAM
   - Seek additional funding or resources based on project progress and demand.
 
 
-## Test Cloud Provider - Huggingface Spaces, OlaKrutrim Cloud
+### Test Cloud Provider 
+
+- Huggingface Spaces, 
+- OlaKrutrim Cloud
 
 ### Provider and Costs
 
@@ -192,7 +196,7 @@ We appreciate your consideration and look forward to the possibility of collabor
 ### v.0.0.1 
     
 #### 25, Feb, 2025 :  Automatic Speech Recognition for Kannada - Demo
-
+1. Deployed ASR in HuggingFace for [CPU(Available 24/7 - Free)](https://huggingface.co/spaces/gaganyatri/asr_indic_server_cpu) and [GPU (On-demand - Pause, .5 $/hour)](https://huggingface.co/spaces/gaganyatri/asr_indic_server) 
 
 ### Transcription Results
 
@@ -208,7 +212,7 @@ Note -  We converted the YouTube videos into audio files manually and then used 
 ### v.0.0.2
     
 #### 27, Feb, 2025 :  Text to Speech for Kannada - Demo
-
+1. Deployed TTS in HuggingFace for [CPU(Available 24/7 - Free)](https://huggingface.co/spaces/gaganyatri/tts_indic_server_cpu) and [GPU (On-demand - Pause, .5 $/hour)](https://huggingface.co/spaces/gaganyatri/tts_indic_server) 
 
 ### v0.0.3 
 
@@ -216,9 +220,8 @@ Note -  We converted the YouTube videos into audio files manually and then used 
 
 1. update project title - Dhwani
 2. Moved 3 months detailed plan to - [Dhwani Research Milestones document](https://github.com/sachinsshetty/onwards/blob/main/idea/2025/2025-02-27-dhwani-research-milestones)
-3. Update Current Setup - To add - live server deployment on Huggingface spaces
-4. Deployment of Translate service to Huggingface Server
-5. Start cloud provider benchmark documents
+3. Deployment of Translate service to [Huggingface Spaces](https://huggingface.co/spaces/gaganyatri/translate_indic_server_cpu) 
+4. Start work on cloud provider benchmark documents
 
 <!--
 
