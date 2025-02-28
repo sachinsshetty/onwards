@@ -81,11 +81,12 @@ The primary objective is to integrate and enhance the following models and servi
 ### Models and Tools
 The project will utilize the following open-source tools:
 
-| Open-Source Tool                       | Source Repository                                          | CPU Deployment | GPU Deployment |
+| Open-Source Tool                       | Source Repository                                          | CPU / Available 24/7 - Free, Slow | GPU / Paused, On-demand, $.05 /hour |
 |---------------------------------------|-------------------------------------------------------------|----------------|----------------|
-| Automatic Speech Recognition : ASR   | [ASR Indic Server](https://github.com/slabstech/asr-indic-server) | [Available 24/7 - Free, Slow](https://huggingface.co/spaces/gaganyatri/asr_indic_server_cpu) |  [Paused, On-demand, $.05 /hour](https://huggingface.co/spaces/gaganyatri/asr_indic_server)  |
-| Text to Speech : TTS                  | [TTS Indic Server](https://github.com/slabstech/tts-indic-server)  | [Available 24/7 - Free, Slow](https://huggingface.co/spaces/gaganyatri/tts_indic_server_cpu)            | [Paused, On-demand, $.05 /hour](https://huggingface.co/spaces/gaganyatri/asr_indic_server) |
-| Translation                           | [Indic Translate Server](https://github.com/slabstech/indic-translate-server) | [Available 24/7 - Free, Slow](https://huggingface.co/spaces/gaganyatri/translate_indic_server_cpu)          | [Paused, On-demand, $.05 /hour](https://huggingface.co/spaces/gaganyatri/translate_indic_server)            |
+| Automatic Speech Recognition : ASR   | [ASR Indic Server](https://github.com/slabstech/asr-indic-server) | [HF Demo](https://huggingface.co/spaces/gaganyatri/asr_indic_server_cpu) |  [Ondemand - HF Demo](https://huggingface.co/spaces/gaganyatri/asr_indic_server)  |
+| Text to Speech : TTS                  | [TTS Indic Server](https://github.com/slabstech/tts-indic-server)  | [HF Demo](https://huggingface.co/spaces/gaganyatri/tts_indic_server_cpu)            | [Ondemand - HF Demo](https://huggingface.co/spaces/gaganyatri/asr_indic_server) |
+| Translation                           | [Indic Translate Server](https://github.com/slabstech/indic-translate-server) | [HF Demo](https://huggingface.co/spaces/gaganyatri/translate_indic_server_cpu)          | [Ondemand - HF Demo](https://huggingface.co/spaces/gaganyatri/translate_indic_server)            |
+
 ### Current Setup
 
 The development is currently being executed on a laptop with a GTX 1060 6GB VRAM. However, to ensure robustness and scalability, additional GPU resources are required.
