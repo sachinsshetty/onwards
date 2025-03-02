@@ -1,4 +1,4 @@
-# Project Dhwani : Proposal for Research Funding: GPU Access for Kannada Voice Model Development
+# Project Dhwani: Enhancing Kannada Voice Model Development with GPU Access
 
 ## Table of Contents
 
@@ -34,7 +34,8 @@
 
 ## Executive Summary
 
-This proposal for Project Dhwani aims to secure GPU access for a period of three months to develop and enhance a Kannada voice model. The project leverages open-source Large Language Models (LLMs) and tools provided by AI4BHARAT to build a robust voice solution comparable to industry standards set by Alexa, Siri, and Google. The project will focus on Automatic Speech Recognition (ASR), Text-to-Speech (TTS), and translation services for Indian languages, with a specific emphasis on Kannada. We request research grant/sponsorship of $1,800 for 3 months. 
+The primary research goal of Project Dhwani is to measure and improve the Time to First Token Generation (TTFTG) for model architectures in Automatic Speech Recognition (ASR), Translation, and Text-to-Speech (TTS) systems. By leveraging open-source Large Language Models (LLMs) and tools provided by AI4BHARAT, we aim to develop and enhance a Kannada voice model that meets industry standards set by Alexa, Siri, and Google. The project will focus on creating robust voice solutions for Indian languages, with a specific emphasis on Kannada. To achieve this, we require GPU access for a period of three months. Therefore, we request a research grant/sponsorship of $960 per month for 3 months. Total grant request would be $2880 to support this endeavor.
+
 
 ## Introduction
 
@@ -59,7 +60,7 @@ The primary objective is to integrate and enhance the following models and servi
 
 ### Cloud Providers
 
-- **Cost**: Estimated $1,800 for three months of cloud-based GPU access.
+- **Cost**: Estimated $2,880 for three months of cloud-based GPU access.
 - **Justification**: Necessary for initial infra setup, model optimization and performance evaluation.
 
 ### On-Premise GPU Setup
@@ -68,18 +69,20 @@ The primary objective is to integrate and enhance the following models and servi
 - **Justification**: Long-term investment for sustainable development and scalability.
 
 
+We will target implementaion with Single GPU
+
 ### GPU Access Cost Estimation
 
 #### Cost Breakdown
 
-| Month  | Activity                                  | Users   | GPU Hours per Day | Number of GPUs | Cost per Hour/GPU ($) | Daily Cost ($) | Monthly Cost ($) |
+| Month  | Activity                                  | Users   | Cost per Hour/GPU ($) | Daily Cost ($) | Monthly Cost ($) |
 |--------|-------------------------------------------|---------|------------------|----------------|-------------------|----------------|------------------|
-| 1      | Development and optimization             | 1-5     | 8                | 1              | 0.5               | 4              | 120              |
-| 2      | Scalability tests and beta users         | 10-20   | 16               | 3              | 0.5               | 24             | 720              |
-| 3      | Large scale testing across timezones     | 10-20   | 24               | 3              | 0.5               | 36            | 960              |
+| 1      | Development and optimization             | 1-5     |  0.5               | 4              | 960              |
+| 2      | Scalability tests and beta users         | 10-20   |  0.5               | 24             | 960              |
+| 3      | Large scale testing across timezones     | 10-20   |  0.5               | 36            | 960              |
 
 **Total Cost**
-- **Total Cost**: $120 + $720 + $960 = $1,800
+- **Total Cost**: $960 + $960 + $960 = $2,880
 
 ## Project Scope
 
@@ -252,4 +255,5 @@ Note -  We converted the YouTube videos into audio files manually and then used 
 
 ### v.0.0.5
 #### 1, March 2025 - Add More Demo's for Kannada variants
-- See [Integrate Demos](#integrated-demos)
+1. See [Integrate Demos](#integrated-demos)
+2.  Update research goal to highlight focus group. Improve Time to First Token Generation
