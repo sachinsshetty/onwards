@@ -96,7 +96,20 @@ The project will utilize the following open-source tools:
 
 The development is currently being executed on a laptop with a GTX 1060 6GB VRAM. However, to ensure robustness and scalability, additional GPU resources are required.
 
-- [Live Demo setup for Dhwani](https://huggingface.co/spaces/gaganyatri/dhwani)
+
+#### Integrated Demos
+- Demo for Testing components for Dhwani for Accuracy and evaluation
+
+| Feature                      | Description                                                                 | Demo Link | Components          | Source Code       |
+|------------------------------|-----------------------------------------------------------------------------|-----------|---------------------|-------------------|
+| Answer Engine                | Provides answers to queries using a large language model.                     |   | LLM                 | [Link](https://github.com/slabstech/dhwani/ux/answer_engine/app.py)          |
+| Answer Engine with Translate| Provides answers to queries with translation capabilities.                   | [Link](https://huggingface.co/spaces/gaganyatri/dhwani-voice-model)  | LLM, Translation    | [Link](https://github.com/slabstech/dhwani/ux/answer_engine_translate/app.py)          |
+| PDF Translate                | Translates content from PDF documents.                                       |  | Translation         |           |
+| Text Translate               | Translates text from one language to another.                                |   | Translation         |           |
+| Voice Generation            | Generates speech from text.                                                  |   | TTS                 | [Link](https://github.com/slabstech/dhwani/ux/text_to_speech/app.py)          |
+| Voice to Text Translation    | Converts spoken language to text and translates it.                          | [Link](https://huggingface.co/spaces/gaganyatri/dhwani-tts)  | ASR, Translation    | [Link](https://github.com/slabstech/dhwani/ux/voice_to_text_translation/app.py)          |
+| Voice to Voice Translation   | Converts spoken language to text, translates it, and then generates speech.   | [Link](https://huggingface.co/spaces/gaganyatri/dhwani-tts)  | ASR, Translation, TTS| [Link](https://github.com/slabstech/dhwani/ux/voice_to_voice_translation/app.py)          |
+| Text Query                   | Allows querying text data for specific information.                          | [Link](https://huggingface.co/spaces/gaganyatri/dhwani_text_query)  | LLM                 | [Link](https://github.com/slabstech/dhwani/ux/text_query/app.py)          |
 
 
 ## Proposed Plan
@@ -237,50 +250,6 @@ Note -  We converted the YouTube videos into audio files manually and then used 
 2. [Voice Translation Demo](https://huggingface.co/spaces/gaganyatri/dhwani)
 3. [Real time Answer Engine](https://huggingface.co/spaces/gaganyatri/dhwani-answer)
 
-
-<!--
-
-### v.0.0.2
-
-- 28 Feb , 2025
-# Idea: Dhwani - Voice Mode
-
-**Running on Private Cloud Servers**
-
-## Making AI Accessible to All with 100% Privacy
-
-Dhwani is designed to be self-hosted or used via hosted services, ensuring complete privacy for all users.
-
-### Visit Our Website
-[SlabTech - Dhwani](https://slabtech.com/dhwani)
-
-## Demo Idea: Kannada Gotilla
-
-### Workflow
-
-1. **User Records Audio**:
-   - The user records an audio message.
-
-2. **ASR Service**:
-   - The Automatic Speech Recognition (ASR) service converts the audio to Kannada text.
-
-3. **Translation Service**:
-   - The translation service converts the Kannada text to the user's native language and displays it.
-
-4. **User Input in Native Language**:
-   - The user enters text in their native language.
-
-5. **Translation Service**:
-   - The translation service converts the native language text back to Kannada.
-
-6. **TTS Service**:
-   - The Text-to-Speech (TTS) service provides a response in Kannada speech.
-
---
-
-### Setup and Installation
-
-The installation script runs in just 4 minutes on startup. You can find the setup script here: [ASR Indic Server Setup Script](https://github.com/slabstech/asr-indic-server/blob/server-dep/setup.sh).
-
-
--->
+### v.0.0.5
+#### 1, March 2025 - Add More Demo's for Kannada variants
+- See [Integrate Demos](#integrated-demos)
