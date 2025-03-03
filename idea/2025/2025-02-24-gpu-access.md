@@ -213,41 +213,8 @@ We appreciate your consideration and look forward to the possibility of collabor
 
 ### v.0.0.1 
     
-#### 25, Feb, 2025 :  Automatic Speech Recognition for Kannada - Demo
-1. Deployed ASR in HuggingFace for [CPU(Available 24/7 - Free)](https://huggingface.co/spaces/gaganyatri/asr_indic_server_cpu) and [GPU (On-demand - Pause, .5 $/hour)](https://huggingface.co/spaces/gaganyatri/asr_indic_server) 
-
-### Transcription Results
-
-| Item          | Description                                                                 |
-|---------------|-----------------------------------------------------------------------------|
-| YT Video 1    | [Navaduva Nudiye](https://www.youtube.com/watch?v=LuZzhMN8ndQ)              |
-| YT Video 2    | [Aagadu Yendu](https://www.youtube.com/watch?v=-Oryie1c-gs)                 |
-| Transcription Output 1 | [Song 1](https://github.com/slabstech/asr-indic-server/blob/main/docs/kannada_sample_3_out.md) |
-| Transcription Output 2 | [Song 2](https://github.com/slabstech/asr-indic-server/blob/main/docs/kannada_sample_4_out.md) |
-
-Note -  We converted the YouTube videos into audio files manually and then used the API.
-
-#### 27, Feb, 2025 :  Text to Speech for Kannada - Demo
-1. Deployed TTS in HuggingFace for [CPU(Available 24/7 - Free)](https://huggingface.co/spaces/gaganyatri/tts_indic_server_cpu) and [GPU (On-demand - Pause, .5 $/hour)](https://huggingface.co/spaces/gaganyatri/tts_indic_server) 
-
-
-#### 27, Feb 2025 - TTS + ASR
-
-1. update project title - Dhwani
-2. Moved 3 months detailed plan to - [Dhwani Research Milestones document](https://github.com/sachinsshetty/onwards/blob/main/idea/2025/2025-02-27-dhwani-research-milestones)
-3. Deployment of Translate service to [Huggingface Spaces](https://huggingface.co/spaces/gaganyatri/translate_indic_server_cpu) 
-4. Start work on cloud provider benchmark documents
-
-
-#### 28, Feb 2025 - Live Demo
-
-1. Add two target Solution 
-2. [Voice Translation Demo](https://huggingface.co/spaces/gaganyatri/dhwani)
-3. [Real time Answer Engine](https://huggingface.co/spaces/gaganyatri/dhwani-answer)
-
-#### 1, March 2025 - Add More Demo's for Kannada variants
-1. See [Integrate Demos](#integrated-demos)
-2.  Update research goal to highlight focus group. Improve Time to First Token Generation
+#### 1, March 2025 
+Update research goal to highlight focus group. Improve Time to First Token Generation
 
 #### 2. March 2025 - Single GPU setup
-Created integrated setup to run on a Single cloud GPU. Integrated system does not run on local GPU laptops 
+Created integrated setup to run on a Single cloud GPU.  
