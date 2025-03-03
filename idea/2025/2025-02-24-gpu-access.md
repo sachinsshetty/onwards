@@ -27,10 +27,7 @@
 9. [Conclusion](#conclusion)
 10. [Contact Information](#contact-information)
 11. [ChangeLog](#changelog)
-    - [v.0.0.1 - 25 Feb 2025](#v001)
-    - [v.0.0.2 - 26 Feb 2025](#v002)
-    - [v.0.0.3 - 27 Feb 2025](#v003)
-    - [v.0.0.4 - 28 Feb 2025](#v004)
+    - [v.0.0.1 - 25 Feb - 3 Mar 2025](#v001)
 
 ## Executive Summary
 
@@ -74,12 +71,11 @@ We will target implementaion with Single GPU
 ### GPU Access Cost Estimation
 
 #### Cost Breakdown
-
-| Month  | Activity                                  | Users   | Cost per Hour/GPU ($) | Daily Cost ($) | Monthly Cost ($) |
-|--------|-------------------------------------------|---------|------------------|----------------|-------------------|----------------|------------------|
-| 1      | Development and optimization             | 1-5     |  0.5               | 4              | 960              |
-| 2      | Scalability tests and beta users         | 10-20   |  0.5               | 24             | 960              |
-| 3      | Large scale testing across timezones     | 10-20   |  0.5               | 36            | 960              |
+| Month | Activity                          | Users | Cost per Hour/GPU ($) | Hours per Day | Daily Cost ($) | Monthly Cost ($) |
+|-------|-----------------------------------|-------|-----------------------|---------------|----------------|------------------|
+| 1     | Development and optimization      | 1-5   | 0.5                   | 4             | 2.00           | 960              |
+| 2     | Scalability tests and beta users | 10-20 | 0.5                   | 24            | 12.00          | 960              |
+| 3     | Large scale testing across timezones | 10-20 | 0.5                   | 36            | 18.00          | 960              |
 
 **Total Cost**
 - **Total Cost**: $960 + $960 + $960 = $2,880
@@ -231,12 +227,9 @@ We appreciate your consideration and look forward to the possibility of collabor
 
 Note -  We converted the YouTube videos into audio files manually and then used the API.
 
-### v.0.0.2
-    
 #### 27, Feb, 2025 :  Text to Speech for Kannada - Demo
 1. Deployed TTS in HuggingFace for [CPU(Available 24/7 - Free)](https://huggingface.co/spaces/gaganyatri/tts_indic_server_cpu) and [GPU (On-demand - Pause, .5 $/hour)](https://huggingface.co/spaces/gaganyatri/tts_indic_server) 
 
-### v0.0.3 
 
 #### 27, Feb 2025 - TTS + ASR
 
@@ -245,7 +238,6 @@ Note -  We converted the YouTube videos into audio files manually and then used 
 3. Deployment of Translate service to [Huggingface Spaces](https://huggingface.co/spaces/gaganyatri/translate_indic_server_cpu) 
 4. Start work on cloud provider benchmark documents
 
-### v0.0.4
 
 #### 28, Feb 2025 - Live Demo
 
@@ -253,7 +245,9 @@ Note -  We converted the YouTube videos into audio files manually and then used 
 2. [Voice Translation Demo](https://huggingface.co/spaces/gaganyatri/dhwani)
 3. [Real time Answer Engine](https://huggingface.co/spaces/gaganyatri/dhwani-answer)
 
-### v.0.0.5
 #### 1, March 2025 - Add More Demo's for Kannada variants
 1. See [Integrate Demos](#integrated-demos)
 2.  Update research goal to highlight focus group. Improve Time to First Token Generation
+
+#### 2. March 2025 - Single GPU setup
+Created integrated setup to run on a Single cloud GPU. Integrated system does not run on local GPU laptops 
