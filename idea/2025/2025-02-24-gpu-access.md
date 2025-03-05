@@ -101,10 +101,10 @@ The development is currently being executed on a laptop with a GTX 1060 6GB VRAM
 
 | Feature                      | Description                                                                 | Demo Link | Components          | Source Code       |
 |------------------------------|-----------------------------------------------------------------------------|-----------|---------------------|-------------------|
-| Answer Engine                | Provides answers to queries using a large language model.                     |   | LLM                 | [Link](https://github.com/slabstech/dhwani/ux/answer_engine/app.py)          |
-| Answer Engine with Translate| Provides answers to queries with translation capabilities.                   | [Link](https://huggingface.co/spaces/gaganyatri/dhwani-voice-model)  | LLM, Translation    | [Link](https://github.com/slabstech/dhwani/ux/answer_engine_translate/app.py)          |
+| Answer Engine                | Provides answers to queries using a large language model.                     | [Link](https://huggingface.co/spaces/gaganyatri/dhwani-voice-model)  | LLM                 | [Link](https://github.com/slabstech/dhwani/ux/answer_engine/app.py)          |
+| Answer Engine with Translate| Provides answers to queries with translation capabilities.                   |   | LLM, Translation    | [Link](https://github.com/slabstech/dhwani/ux/answer_engine_translate/app.py)          |
 | PDF Translate                | Translates content from PDF documents.                                       |  | Translation         |           |
-| Text Translate               | Translates text from one language to another.                                |   | Translation         |           |
+| Text Translate               | Translates text from one language to another.                                |  | Translation         |           |
 | Voice Generation            | Generates speech from text.                                                  |   | TTS                 | [Link](https://github.com/slabstech/dhwani/ux/text_to_speech/app.py)          |
 | Voice to Text Translation    | Converts spoken language to text and translates it.                          | [Link](https://huggingface.co/spaces/gaganyatri/dhwani-tts)  | ASR, Translation    | [Link](https://github.com/slabstech/dhwani/ux/voice_to_text_translation/app.py)          |
 | Voice to Voice Translation   | Converts spoken language to text, translates it, and then generates speech.   | [Link](https://huggingface.co/spaces/gaganyatri/dhwani-tts)  | ASR, Translation, TTS| [Link](https://github.com/slabstech/dhwani/ux/voice_to_voice_translation/app.py)          |
@@ -218,3 +218,5 @@ Update research goal to highlight focus group. Improve Time to First Token Gener
 
 #### 2. March 2025 - Single GPU setup
 Created integrated setup to run on a Single cloud GPU.  
+
+[TCO for POC Voice AI](https://github.com/sachinsshetty/onwards/blob/main/idea/2025/2025-03-03-tco-dhwani.md)
