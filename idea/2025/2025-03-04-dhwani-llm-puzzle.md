@@ -15,3 +15,18 @@ everything can be hosted with current hardware,  we just need to utilise properl
 
 
 continue speed run, explore all options.
+
+-- system confugsv
+
+50 cent stack. 
+
+
+2 workers of tts on t4.
+3 cent - asr 
+3 cent - translate 
+3 cent -llm
+
+
+Full asynchronous system, supporting all uses cases with degradation of quality. 
+
+Needs a good load balancer.
