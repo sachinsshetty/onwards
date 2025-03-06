@@ -1,6 +1,5 @@
 Dhwani Workshop - March 2025
 
-
 - Dhwani is a self-hosted GenAI platform designed to provide voice mode interaction for Kannada and other Indian languages.
 - We want to make AI accessible for native local languages
 - Dhwani Project [Website](https://slabstech.com/dhwani/)
@@ -18,7 +17,8 @@ Dhwani Workshop - March 2025
 --- 
 
 - Prerequisites
-  - Python + VsCode  [ Installed ]
+  - Python 3.10 required + VsCode  [ Installed ]
+  - Ubuntu 22.04 
   - Huggingface Account 
   - GitHub Account
 
@@ -35,6 +35,21 @@ Dhwani Workshop - March 2025
 ---
 
   - Download the Huggingface model's
+  - **Steps**:
+    1. **Create a virtual environment**:
+    ```bash
+    python -m venv venv
+    ```
+    2. **Activate the virtual environment**:
+    ```bash
+    source venv/bin/activate
+    ```
+
+    3. **Install dependencies**:
+        ```bash
+        pip install huggingface_hub
+        ```
+    4. Download the models 
     - tts - ```huggingface_cli download ai4bharat/indic-parler-tts```
     - asr - ```huggingface-cli download ai4bharat/indicconformer_stt_kn_hybrid_rnnt_large```
     - translate - 

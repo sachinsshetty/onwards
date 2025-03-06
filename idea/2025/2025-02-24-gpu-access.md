@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-1. [Executive Summary](#executive-summary)
+1. [Summary](#summary)
 2. [Introduction](#introduction)
     - [Background](#background)
     - [Objectives](#objectives)
@@ -26,15 +26,23 @@
     - [Technical Specifications](#technical-specifications)
 9. [Conclusion](#conclusion)
 10. [Contact Information](#contact-information)
-11. [ChangeLog](#changelog)
-    - [v.0.0.1 - 25 Feb - 3 Mar 2025](#v001)
 
-## Executive Summary
 
-The primary research goal of Project Dhwani is to measure and improve the Time to First Token Generation (TTFTG) for model architectures in Automatic Speech Recognition (ASR), Translation, and Text-to-Speech (TTS) systems. By leveraging open-source Large Language Models (LLMs) and tools provided by AI4BHARAT, we aim to develop and enhance a Kannada voice model that meets industry standards set by Alexa, Siri, and Google. The project will focus on creating robust voice solutions for Indian languages, with a specific emphasis on Kannada. To achieve this, we require GPU access for a period of three months. Therefore, we request a research grant/sponsorship of $960 per month for 3 months. Total grant request would be $2880 to support this endeavor.
+## Summary
+
+Dhwani is a self-hosted GenAI platform designed to provide voice mode interaction for Kannada and other Indian languages. 
+
+## Research Goals
+
+- Measure and improve the Time to First Token Generation (TTFTG) for model architectures in ASR, Translation, and TTS systems.
+- Develop and enhance a Kannada voice model that meets industry standards set by OpenAI, Google, ElevenLabs, xAI
+- Create robust voice solutions for Indian languages, with a specific emphasis on Kannada.
 
 
 ## Introduction
+
+### Project Website - [https://slabstech.com/dhwani](https://slabstech.com/dhwani)
+
 
 ### Background
 
@@ -46,6 +54,20 @@ The primary objective is to integrate and enhance the following models and servi
 - **Automatic Speech Recognition (ASR)**: To convert spoken Kannada into text.
 - **Text-to-Speech (TTS)**: To convert Kannada text into natural-sounding speech.
 - **Translation Services**: To enable translation between Kannada and other Indian languages.
+
+### Models and Tools
+
+The project utilizes the following open-source tools:
+
+| Open-Source Tool                       | Source Repository                                          | CPU / Available 24/7 - Free| GPU / On-demand |
+|---------------------------------------|-------------------------------------------------------------|----------------|----------------|
+| Automatic Speech Recognition : ASR   | [ASR Indic Server](https://github.com/slabstech/asr-indic-server) | [API Demo](https://huggingface.co/spaces/gaganyatri/asr_indic_server_cpu) // [TODO-App Demo](https://huggingface.co/spaces/gaganyatri/asr_indic_app_gradio) |  - |
+| Text to Speech : TTS                  | [TTS Indic Server](https://github.com/slabstech/tts-indic-server)  | CPU-not suitable             | [App -Demo](https://huggingface.co/spaces/gaganyatri/tts_indic_local) |
+| Translation                           | [Indic Translate Server](https://github.com/slabstech/indic-translate-server) | [API Demo](https://huggingface.co/spaces/gaganyatri/translate_indic_server_cpu) // [App Demo](https://huggingface.co/spaces/gaganyatri/translate_indic_local)          |            |
+| Large Language Model                           | [LLM Indic Server](https://github.com/slabstech/llm-indic-server) | [API Demo](https://huggingface.co/spaces/gaganyatri/translate_indic_server_cpu) // [App Demo](https://huggingface.co/spaces/gaganyatri/llm_indic_local_2)         |            |
+| Document Parser                           | [Indic Document Server](https://github.com/slabstech/docs-indic-server) | Not Suitable          |    -        |
+|All in One Server - ASR + TTS + Translate | [indic-all-server](server/indic_all/) | Not Suitable |  [API Demo ](https://gaganyatri-indic-all-server.hf.space/docs) // [TODO] |
+
 
 ## Target Solution
 
@@ -65,7 +87,6 @@ The primary objective is to integrate and enhance the following models and servi
 - **Cost**: $4,000 for hardware and setup: RTX 4090 - Workstation with 24GB VRAM
 - **Justification**: Long-term investment for sustainable development and scalability.
 
-
 We will target implementaion with Single GPU
 
 ### GPU Access Cost Estimation
@@ -82,14 +103,6 @@ We will target implementaion with Single GPU
 
 ## Project Scope
 
-### Models and Tools
-The project will utilize the following open-source tools:
-
-| Open-Source Tool                       | Source Repository                                          | CPU / Available 24/7 - Free, Slow | GPU / Paused, On-demand, $.05 /hour |
-|---------------------------------------|-------------------------------------------------------------|----------------|----------------|
-| Automatic Speech Recognition : ASR   | [ASR Indic Server](https://github.com/slabstech/asr-indic-server) | [HF Demo](https://huggingface.co/spaces/gaganyatri/asr_indic_server_cpu) |  [Ondemand - HF Demo](https://huggingface.co/spaces/gaganyatri/asr_indic_server)  |
-| Text to Speech : TTS                  | [TTS Indic Server](https://github.com/slabstech/tts-indic-server)  | [HF Demo](https://huggingface.co/spaces/gaganyatri/tts_indic_server_cpu)            | [Ondemand - HF Demo](https://huggingface.co/spaces/gaganyatri/asr_indic_server) |
-| Translation                           | [Indic Translate Server](https://github.com/slabstech/indic-translate-server) | [HF Demo](https://huggingface.co/spaces/gaganyatri/translate_indic_server_cpu)          | [Ondemand - HF Demo](https://huggingface.co/spaces/gaganyatri/translate_indic_server)            |
 
 ### Current Setup
 
@@ -99,16 +112,16 @@ The development is currently being executed on a laptop with a GTX 1060 6GB VRAM
 #### Integrated Demos
 - Demo for Testing components for Dhwani for Accuracy and evaluation
 
-| Feature                      | Description                                                                 | Demo Link | Components          | Source Code       |
-|------------------------------|-----------------------------------------------------------------------------|-----------|---------------------|-------------------|
-| Answer Engine                | Provides answers to queries using a large language model.                     | [Link](https://huggingface.co/spaces/gaganyatri/dhwani-voice-model)  | LLM                 | [Link](https://github.com/slabstech/dhwani/ux/answer_engine/app.py)          |
-| Answer Engine with Translate| Provides answers to queries with translation capabilities.                   |   | LLM, Translation    | [Link](https://github.com/slabstech/dhwani/ux/answer_engine_translate/app.py)          |
-| PDF Translate                | Translates content from PDF documents.                                       |  | Translation         |           |
-| Text Translate               | Translates text from one language to another.                                |  | Translation         |           |
-| Voice Generation            | Generates speech from text.                                                  |   | TTS                 | [Link](https://github.com/slabstech/dhwani/ux/text_to_speech/app.py)          |
-| Voice to Text Translation    | Converts spoken language to text and translates it.                          | [Link](https://huggingface.co/spaces/gaganyatri/dhwani-tts)  | ASR, Translation    | [Link](https://github.com/slabstech/dhwani/ux/voice_to_text_translation/app.py)          |
-| Voice to Voice Translation   | Converts spoken language to text, translates it, and then generates speech.   | [Link](https://huggingface.co/spaces/gaganyatri/dhwani-tts)  | ASR, Translation, TTS| [Link](https://github.com/slabstech/dhwani/ux/voice_to_voice_translation/app.py)          |
-| Text Query                   | Allows querying text data for specific information.                          | [Link](https://huggingface.co/spaces/gaganyatri/dhwani_text_query)  | LLM                 | [Link](https://github.com/slabstech/dhwani/ux/text_query/app.py)          |
+| Feature                      | Description                                                                 | Demo Link | Components          | Source Code       | Hardware       |
+|------------------------------|-----------------------------------------------------------------------------|-----------|---------------------|-------------------|---------------|
+| Kannada Voice AI                | Provides answers to voice queries using a LLM                     | [API Demo](https://huggingface.co/spaces/gaganyatri/dhwani-voice-model) // [App Demo](https://huggingface.co/spaces/gaganyatri/tts_indic_local) | LLM                 | [API](ux/answer_engine/app.py) // [APP](ux/answer_engine/local/app.py)          | CPU / GPU |
+| Text Translate               | Translates text from one language to another.                                | [Link](https://huggingface.co/spaces/gaganyatri/dhwani_text_translate)  | Translation         | [Link](ux/text_translate/app.py)          | CPU / GPU | 
+| Text Query                   | Allows querying text data for specific information.                          | [Link](https://huggingface.co/spaces/gaganyatri/dhwani_text_query)  | LLM                 | [Link](ux/text_query/app.py)          | CPU / GPU |
+| Voice to Text Translation    | Converts spoken language to text and translates it.                          | [Link](https://huggingface.co/spaces/gaganyatri/dhwani)  | ASR, Translation    | [Link](ux/voice_to_text_translation/app.py)          | CPU / GPU |
+| PDF Translate                | Translates content from PDF documents.                                       |  | Translation         |           | GPU |
+| Text to Speech           | Generates speech from text.                                                  |  [Link](https://huggingface.co/spaces/gaganyatri/tts_dhwani_usecase) | TTS                 | [Link](ux/text_to_speech/app.py)          | GPU |
+| Voice to Voice Translation   | Converts spoken language to text, translates it, and then generates speech.   | [Link](https://huggingface.co/spaces/gaganyatri/dhwani-tts)  | ASR, Translation, TTS| [Link](ux/voice_to_voice_translation/app.py)          | GPU |
+| Answer Engine with Translate| Provides answers to queries with translation capabilities.                   |   [link](https://huggingface.co/spaces/gaganyatri/dhwani_voice_to_any) | LLM, Translation    | [Link](ux/answer_engine_translate/app.py)          | GPU|
 
 
 ## Proposed Plan
@@ -166,17 +179,6 @@ Cost from Huggingface Spaces - Ease of Use and model close to server
 
 - WIP - [Cloud provider benchmark document](https://github.com/sachinsshetty/onwards/blob/main/idea/2025/2025-02-27-cloud-provider-benchmarks.md)
 
-## Alternate Cloud Providers for GPU Access
-
-| Cloud Provider       | GPU Model       | Price per Month | Price per Hour | Setup Cost | URL                                                                                                                          |
-|----------------------|------------------|-----------------|-----------------|------------|------------------------------------------------------------------------------------------------------------------------------|
-| Hetzner              | GEX 44           | $205            | N/A             | $88        | [Hetzner GEX 44](https://www.hetzner.com/dedicated-rootserver/gex44/)                                                       |
-| Digital Ocean       | H100             | N/A             | $3.4            | N/A        | [Digital Ocean Pricing](https://www.digitalocean.com/pricing/gpu-droplets)                                                  |
-| Vast.ai             | Various          | N/A             | $0.5            | N/A        | [Vast.ai Pricing](https://vast.ai/pricing)                                                                                   |
-| Tensor Dock         | RTX 4090         | N/A             | $0.5            | N/A        | [Tensor Dock Deploy](https://dashboard.tensordock.com/deploy?gpu=geforcertx4090-pcie-24gb&gpuCount=1&ramAmount=18&vcpuCount=2&storage=80&location=c6e6ce65-b799-47e7-a465-aa0beb60d099&os=TensorML-20.04-LTS-PyTorch) |
-| Hyperstack Cloud    | RTX A6000        | N/A             | $0.5            | N/A        | [Hyperstack Cloud GPU Pricing](https://www.hyperstack.cloud/gpu-pricing)                                                     |
-| Run Pod             | RTX 4090         | N/A             | $0.5            | N/A        | [Run Pod Pricing](https://www.runpod.io/pricing)                                                                            |
-
 ## Additional Reading Materials
 
 ### Dhwani - 3 month - Milestone plan
@@ -209,14 +211,3 @@ We appreciate your consideration and look forward to the possibility of collabor
 
 ---
 
-## ChangeLog
-
-### v.0.0.1 
-    
-#### 1, March 2025 
-Update research goal to highlight focus group. Improve Time to First Token Generation
-
-#### 2. March 2025 - Single GPU setup
-Created integrated setup to run on a Single cloud GPU.  
-
-[TCO for POC Voice AI](https://github.com/sachinsshetty/onwards/blob/main/idea/2025/2025-03-03-tco-dhwani.md)
