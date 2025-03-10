@@ -43,6 +43,10 @@ Dhwani is a self-hosted GenAI platform designed to provide voice mode interactio
 
 ### Project Website - [https://slabstech.com/dhwani](https://slabstech.com/dhwani)
 
+### Report - [Doc](https://docs.google.com/document/d/e/2PACX-1vRRNjjDrbjAGDQgUWtA5LR0TzwviNn61GYpn3Xm0-WKZrjjTyH2GhDdyY80pNp82oQdAfb60auQvVRW/pub)
+
+### Presentation - [SLides](https://docs.google.com/presentation/d/e/2PACX-1vQxLtbL_kXOqHgAHqcFTg8hDP7Dw3lt64U336J0f9CgYQPKDJVqONd3F4Js1XiCvk_LDpbijshQ5mM6/pub?start=false&loop=false&delayms=3000)
+
 
 ### Background
 
