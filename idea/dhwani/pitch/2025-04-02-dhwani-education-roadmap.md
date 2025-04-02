@@ -19,3 +19,8 @@ Below is the brief summary of the services and products that we would like to co
   - Support in developing curriculum involving latest technology used 
   - Training for Student's, Faculty and Researcher to build , design and improve AI models 
 
+
+
+- Alternate Universe
+  - https://www.anthropic.com/education
+  - https://academy.openai.com/
