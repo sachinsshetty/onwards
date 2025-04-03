@@ -24,3 +24,16 @@ Below is the brief summary of the services and products that we would like to co
 - Alternate Universe
   - https://www.anthropic.com/education
   - https://academy.openai.com/
+
+
+--- 
+
+To make AI accessible for everyone, we would like to skill-up students to build AI applications
+using Dhwani AI.
+
+Based on our discussion we will follow the steps described below
+ - A Seminar: Showcasing Dhwani AI’s capabilities and its practical applications in addressing diverse problems.
+
+ - An Induction Session: Guiding attendees on how to effectively utilize Dhwani AI services to power their applications.
+
+ - A Hackathon: Encouraging innovation through a competitive platform where ideas are transformed into tangible products.
