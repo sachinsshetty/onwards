@@ -1,194 +1,186 @@
 Dhwani AI - Latency Report
+# Latency Report for Dhwani AI Voice Assistant
 
-# Summary of Comprehensive Latency Report for Voice AI in Kannada Across NVIDIA GPUs
 
-This report analyzes the latency performance of a Voice AI system processing speech-to-speech requests in Kannada ("What is the capital of Karnataka?") across four NVIDIA GPUs: L40S, L4, T4 Medium, and T4. Latency is measured from the start of transcription to the completion of text processing, encompassing transcription, translation to English, response generation, translation back to Kannada, and final text processing. The analysis uses server log timestamps, with average latencies computed for multiple requests per GPU.
+# Summary Latency Report for Dhwani AI Voice Assistant
+
+## Overview
+This summary condenses the latency analysis of the Dhwani AI Voice Assistant, a Kannada/Indian language voice assistant, based on server logs from April 11, 2025. The analysis compares four hardware configurations (L40S, L4, T4 Medium, T4) for the `/v1/speech_to_speech` endpoint, focusing on end-to-end latency, processing stages, bottlenecks, and recommendations.
 
 ## Key Findings
-- **L40S** achieves the lowest average latency at **1.238 seconds**, making it ideal for low-latency applications.
-- **L4** follows with **1.394 seconds**, offering a balanced performance option.
-- **T4 Medium** and **T4** have nearly identical latencies of **1.985 seconds** and **1.984 seconds**, respectively, suitable for less latency-sensitive tasks.
-- The **response generation** stage is the primary latency driver, with more powerful GPUs like L40S showing significant advantages.
-- Latency consistency varies, with L40S exhibiting high consistency (0.004 seconds variation) and others showing moderate variability.
-- The same input prompt ensures fair comparisons, and minor software differences (e.g., tokenizer warnings) do not affect latency.
 
-## Latency Results Table
-| GPU       | Average Latency (seconds) | Number of Requests | Individual Request Latencies (seconds) |
-|-----------|---------------------------|--------------------|---------------------------------------|
-| L40S      | 8                    | 2                  | 1.236, 1.240                         |
-| L4        | 19                   | 3                  | 1.582, 1.307, 1.293                  |
-| T4 Medium | 1.985                     | 3                  | 2.100, 1.914, 1.942                  |
-| T4        | 1.984                     | 3                  | 2.145, 1.866, 1.942                  |
+### Hardware Performance
+| Hardware   | Average Latency (s) | Standard Deviation (s) | First Request Note                     |
+|------------|---------------------|------------------------|----------------------------------------|
+| L40S       | 5.138               | 1.171                  | Slower at 6.536 s vs. 4.400 s later    |
+| L4         | 10.079              | 1.374                  | Moderate performance                   |
+| T4 Medium  | 18.383              | 0.952                  | Slow, consistent latency               |
+| T4         | 19.441              | 1.147                  | Slowest overall                        |
 
-## Stage Breakdown Table (Representative Request per GPU)
-| GPU       | Transcription to English Translation (s) | Response Generation (s) | Translation to Kannada (s) | Total Latency (s) |
-|-----------|----------------------------------------|------------------------|---------------------------|-------------------|
-| L40S      | 0.177                                  | 0.870                  | 0.189                     | 1.236             |
-| L4        | 0.356                                  | 1.036                  | 0.190                     | 1.582             |
-| T4 Medium | 0.400                                  | 1.458                  | 0.242                     | 2.100             |
-| T4        | 0.430                                  | 1.487                  | 0.228                     | 2.145             |
+### Processing Stages
+| Stage                    | Latency Range (s) | Contribution (%) | Notes                              |
+|--------------------------|-------------------|------------------|------------------------------------|
+| Transcription            | ~0.001            | <0.02            | Near-instant, negligible impact    |
+| Translation to English   | 0.266–0.312       | 1.60–5.80        | Minor contributor                  |
+| Response Generation      | 0.911–1.445       | 7.43–17.73       | Fastest on L40S (0.911 s)          |
+| Translation to Kannada   | 0.192–0.265       | 1.27–3.74        | Fast across all hardware           |
+| Remaining (e.g., speech synthesis) | 3.736–17.418    | 72.71–89.60      | Dominates latency, likely speech synthesis |
+
+### Bottlenecks
+| Bottleneck Type | Description                                      | Impact Details                              |
+|-----------------|--------------------------------------------------|---------------------------------------------|
+| Primary         | Remaining time (speech synthesis, unlogged tasks) | 72.71% (L40S) to 89.60% (T4) of latency     |
+| Secondary       | Response generation                              | Slower on T4/T4 Medium (1.383–1.445 s)      |
+| Other           | Cold start delays, tokenizer warning             | First request slower; warning non-critical  |
+
+## Recommendations
+| Action Item                          | Description                                                                 |
+|--------------------------------------|-----------------------------------------------------------------------------|
+| Optimize Speech Synthesis            | Profile and optimize text-to-speech (e.g., quantization, lighter models)     |
+| Enhance Response Generation          | Optimize language model for T4/T4 Medium (e.g., mixed precision, pruning)    |
+| Reduce Cold Start Latency            | Implement model preloading or caching for common queries                    |
+| Improve Logging                      | Add speech synthesis timestamps, increase precision                         |
+| Hardware Strategy                    | Use L40S for production; L4 as alternative; avoid T4/T4 Medium for real-time |
+| Code Update                          | Fix deprecated tokenizer for Transformers v5 compatibility                  |
 
 ## Conclusion
-The L40S is recommended for optimal performance, followed by the L4 for balanced needs. T4 Medium and T4 GPUs perform similarly, indicating no significant advantage for the "Medium" variant. The response generation stage drives latency differences, highlighting the importance of GPU computational power.
+| Summary Point                     | Details                                                                 |
+|-----------------------------------|-------------------------------------------------------------------------|
+| Best Hardware                     | L40S (5.138 s average), ideal for real-time applications                |
+| Worst Hardware                    | T4/T4 Medium (18.383–19.441 s), unsuitable without optimization         |
+| Main Bottleneck                   | Speech synthesis (72.71–89.60%), requires urgent optimization           |
+| Next Steps                        | Optimize speech synthesis, response generation, and cold starts; enhance logging |
+| Future Focus                      | Profile speech synthesis, test diverse queries, assess concurrency       |
 
 
---- 
+--
 
 
-Long Form Report 
-
-
-# Comprehensive Latency Report for Voice AI in Kannada Across NVIDIA GPUs
-
-## Introduction
-
-This report provides a detailed analysis of the latency performance of a Voice AI system processing speech-to-speech requests in Kannada, evaluated across four NVIDIA GPUs: L40S, L4, T4 Medium, and T4. The system processes an input audio prompt in Kannada ("ಕರ್ನಾಟಕ ದ ರಾಜಧಾನಿ ಯಾವುದು", translating to "What is the capital of Karnataka?"), transcribes it, translates it to English, generates a response in English, translates the response back to Kannada, and processes the final text for output. Latency is defined as the total time from the start of transcription to the completion of text processing for each request, representing the core speech-to-speech processing duration.
+## Overview
+This report analyzes the latency performance of the Dhwani AI Voice Assistant, designed for Kannada and other Indian languages, based on server logs from April 11, 2025. The logs cover three hardware configurations: L40S, L4, T4 Medium, and T4. The analysis focuses on the end-to-end latency of the `/v1/speech_to_speech` endpoint and the individual processing stages, including transcription, translation to English, response generation, translation back to Kannada, and overall request processing. The goal is to identify performance bottlenecks, compare hardware efficiency, and provide recommendations for optimization.
 
 ## Methodology
+- **Data Source**: Logs from four hardware configurations (L40S, L4, T4 Medium, T4) for the query "ಕರ್ನಾಟಕ ದ ರಾಜಧಾನಿ ಯಾವುದು" (What is the capital of Karnataka?).
+- **Sample Size**: Three requests per configuration, totaling 12 requests.
+- **Latency Metrics**:
+  - **Transcription**: Time from receiving the audio to transcribing it to Kannada text.
+  - **Translation to English**: Time from transcribed text to English translation.
+  - **Response Generation**: Time from English prompt to generating the English response.
+  - **Translation to Kannada**: Time from English response to Kannada translation.
+  - **End-to-End Latency**: Total time for the `/v1/speech_to_speech` request, as reported in the logs.
+- **Assumptions**:
+  - Timestamps are accurate and synchronized.
+  - The repeated "Generated response" log entry is a logging artifact and does not affect latency calculations.
+  - The deprecated tokenizer warning does not impact performance but is noted for future code updates.
 
-The latency for each request was calculated using timestamps extracted from the server logs. Specifically, the time difference between the first timestamp (when the text is transcribed, e.g., "Transcribed text") and the last timestamp (when the text is processed, e.g., "Processed text") was computed. For each GPU, multiple requests were analyzed, and the average latency was determined. The logs provided detailed timestamps for the following stages:
+## Latency Analysis
 
-1. **Transcription**: Converting the input audio to Kannada text.
-2. **Prompt Reception**: Receiving the transcribed text.
-3. **Translation to English**: Translating the Kannada prompt to English.
-4. **Response Generation**: Generating the response in English (often logged twice, but only the first timestamp is considered).
-5. **Translation to Kannada**: Translating the English response back to Kannada.
-6. **Text Processing**: Final processing of the Kannada response text.
+### 1. End-to-End Latency
+The end-to-end latency is the total time taken for the `/v1/speech_to_speech` request, as logged by the server.
 
-The "POST" log lines (e.g., "INFO: IP:port - 'POST /v1/speech_to_speech?language=kannada HTTP/1.1' 200 OK") indicate the completion of the request but lack explicit timestamps in the provided excerpts. Thus, latency is approximated from the transcription start to the text processing end, assuming these timestamps closely align with request reception and response completion, respectively.
+| Hardware   | Request 1 (s) | Request 2 (s) | Request 3 (s) | Average (s) | Std Dev (s) |
+|------------|---------------|---------------|---------------|-------------|-------------|
+| L40S       | 6.536         | 4.400         | 4.479         | 5.138       | 1.171       |
+| L4         | 11.687        | 9.344         | 9.207         | 10.079      | 1.374       |
+| T4 Medium  | 19.504        | 17.746        | 17.898        | 18.383      | 0.952       |
+| T4         | 20.830        | 18.643        | 18.850        | 19.441      | 1.147       |
 
-## Results
+**Observations**:
+- **L40S** is the fastest, with an average latency of 5.138 seconds, and shows variability (std dev 1.171 s), likely due to the first request being slower (6.536 s) compared to subsequent ones (4.400 s, 4.479 s).
+- **L4** averages 10.079 seconds, roughly double the L40S latency, with moderate variability (std dev 1.374 s).
+- **T4 Medium** and **T4** are significantly slower, averaging 18.383 seconds and 19.441 seconds, respectively, with lower variability (std dev 0.952 s and 1.147 s).
+- The first request on each hardware tends to be slower, possibly due to initialization or caching effects.
 
-Below are the latency measurements for each GPU, including individual request latencies and their averages, calculated to three decimal places for precision (since timestamps are in milliseconds).
+### 2. Stage-Wise Latency Breakdown
+To understand where time is spent, we calculate the latency for each processing stage using the provided timestamps. The stages are:
+- **Transcription**: Transcribed text timestamp - Request start timestamp.
+- **Translation to English**: English translation timestamp - Transcribed text timestamp.
+- **Response Generation**: Generated response timestamp - English translation timestamp.
+- **Translation to Kannada**: Kannada translation timestamp - Generated response timestamp.
+- **Remaining Time**: End-to-end latency - Sum of above stages (likely includes audio processing, speech synthesis, and overhead).
 
-### L40S GPU
-- **Request 1**:
-  - Start: 2025-04-11 13:59:51,224
-  - End: 2025-04-11 13:59:52,460
-  - Latency: 52.460 - 51.224 = **1.236 seconds**
-- **Request 2**:
-  - Start: 2025-04-11 14:00:00,910
-  - End: 2025-04-11 14:00:02,150
-  - Latency: 2.150 - 0.910 = **1.240 seconds**
-- **Average Latency**: (1.236 + 1.240) / 2 = **1.238 seconds**
+Below is the average latency per stage across the three requests for each hardware:
 
-### L4 GPU
-- **Request 1**:
-  - Start: 2025-04-11 14:13:59,167
-  - End: 2025-04-11 14:14:00,749
-  - Latency: (60.749 - 59.167) = **1.582 seconds**
-- **Request 2**:
-  - Start: 2025-04-11 14:14:25,847
-  - End: 2025-04-11 14:14:27,154
-  - Latency: 27.154 - 25.847 = **1.307 seconds**
-- **Request 3**:
-  - Start: 2025-04-11 14:14:44,852
-  - End: 2025-04-11 14:14:46,145
-  - Latency: 46.145 - 44.852 = **1.293 seconds**
-- **Average Latency**: (1.582 + 1.307 + 1.293) / 3 = 4.182 / 3 = **1.394 seconds**
+| Hardware   | Transcription (s) | Trans. to Eng (s) | Resp. Gen (s) | Trans. to Kan (s) | Remaining (s) |
+|------------|-------------------|-------------------|---------------|-------------------|---------------|
+| L40S       | 0.001             | 0.298             | 0.911         | 0.192             | 3.736         |
+| L4         | 0.001             | 0.266             | 0.970         | 0.194             | 8.648         |
+| T4 Medium  | 0.001             | 0.296             | 1.383         | 0.234             | 16.469        |
+| T4         | 0.001             | 0.312             | 1.445         | 0.265             | 17.418        |
 
-### T4 Medium GPU
-- **Request 1**:
-  - Start: 2025-04-11 14:25:46,610
-  - End: 2025-04-11 14:25:48,710
-  - Latency: 48.710 - 46.610 = **2.100 seconds**
-- **Request 2**:
-  - Start: 2025-04-11 14:26:10,562
-  - End: 2025-04-11 14:26:12,476
-  - Latency: 12.476 - 10.562 = **1.914 seconds**
-- **Request 3**:
-  - Start: 2025-04-11 14:26:32,893
-  - End: 2025-04-11 14:26:34,835
-  - Latency: 34.835 - 32.893 = **1.942 seconds**
-- **Average Latency**: (2.100 + 1.914 + 1.942) / 3 = 5.956 / 3 = **1.985 seconds**
+**Calculation Notes**:
+- Timestamps were extracted from logs (e.g., for L40S Request 1: Transcription at 15:59:25.143, Translation to English at 15:59:25.475, etc.).
+- Remaining time is calculated as: End-to-end latency - (Transcription + Trans. to Eng + Resp. Gen + Trans. to Kan).
+- Transcription latency is consistently ~0.001 seconds due to near-instantaneous logging (possibly limited by timestamp precision).
 
-### T4 GPU
-- **Request 1**:
-  - Start: 2025-04-11 14:39:53,189
-  - End: 2025-04-11 14:39:55,334
-  - Latency: 55.334 - 53.189 = **2.145 seconds**
-- **Request 2**:
-  - Start: 2025-04-11 14:40:17,198
-  - End: 2025-04-11 14:40:19,064
-  - Latency: 19.064 - 17.198 = **1.866 seconds**
-- **Request 3**:
-  - Start: 2025-04-11 14:40:39,981
-  - End: 2025-04-11 14:40:41,923
-  - Latency: 41.923 - 39.981 = **1.942 seconds**
-- **Average Latency**: (2.145 + 1.866 + 1.942) / 3 = 5.953 / 3 = **1.984 seconds**
+**Observations**:
+- **Transcription**: Extremely fast (~0.001 s) across all hardware, suggesting efficient speech-to-text processing or limited timestamp granularity.
+- **Translation to English**: Takes 0.266–0.312 seconds, with L4 slightly faster (0.266 s) than L40S (0.298 s), T4 Medium (0.296 s), and T4 (0.312 s). Differences are minor (~46 ms).
+- **Response Generation**: L40S is fastest (0.911 s), followed by L4 (0.970 s), T4 Medium (1.383 s), and T4 (1.445 s). This stage shows noticeable hardware dependency, with T4 and T4 Medium lagging by ~0.5 seconds.
+- **Translation to Kannada**: Fast across all hardware (0.192–0.265 s), with L40S and L4 slightly quicker (0.192 s, 0.194 s) than T4 Medium (0.234 s) and T4 (0.265 s).
+- **Remaining Time**: Dominates the latency, especially for T4 (17.418 s) and T4 Medium (16.469 s), followed by L4 (8.648 s) and L40S (3.736 s). This likely includes speech synthesis (text-to-speech) and other overheads (e.g., network, I/O).
 
-## Analysis
+### 3. Stage Contribution to Total Latency
+To highlight bottlenecks, we express each stage’s average latency as a percentage of the total end-to-end latency:
 
-### Latency Comparison
-The average latencies across the GPUs are:
-- **L40S**: 1.238 seconds
-- **L4**: 1.394 seconds
-- **T4 Medium**: 1.985 seconds
-- **T4**: 1.984 seconds
+| Hardware   | Transcription (%) | Trans. to Eng (%) | Resp. Gen (%) | Trans. to Kan (%) | Remaining (%) |
+|------------|-------------------|-------------------|---------------|-------------------|---------------|
+| L40S       | 0.02              | 5.80              | 17.73         | 3.74              | 72.71         |
+| L4         | 0.01              | 2.64              | 9.63          | 1.92              | 85.80         |
+| T4 Medium  | 0.01              | 1.61              | 7.52          | 1.27              | 89.59         |
+| T4         | 0.01              | 1.60              | 7.43          | 1.36              | 89.60         |
 
-The L40S GPU demonstrates the lowest latency, followed by the L4, while the T4 Medium and T4 GPUs exhibit nearly identical, higher latencies. This ranking aligns with expected GPU performance, where L40S (likely a high-end model from NVIDIA’s Ampere or later architecture) outperforms the L4 (a mid-tier modern GPU), and both surpass the older T4 GPUs (Turing architecture).
+**Observations**:
+- The **Remaining Time** dominates across all hardware, contributing 72.71% (L40S) to 89.60% (T4) of total latency. This suggests that speech synthesis or other unlogged processes (e.g., audio preprocessing, network latency) are the primary bottlenecks.
+- **Response Generation** is the second-largest contributor for L40S (17.73%) and L4 (9.63%), but less significant for T4 Medium (7.52%) and T4 (7.43%) due to the overwhelming remaining time.
+- **Translation to English** and **Translation to Kannada** are minor contributors (1.27–5.80%), indicating efficient translation models.
+- **Transcription** is negligible (<0.02%) in all cases.
 
-### Breakdown of Processing Stages
-To understand the contributors to latency, the time spent in key stages was analyzed for a representative request from each GPU:
+## Hardware Comparison
+- **L40S**: Best performer with an average end-to-end latency of 5.138 seconds. Excels in response generation (0.911 s) and has the lowest remaining time (3.736 s). Likely benefits from superior GPU compute power.
+- **L4**: Moderate performance at 10.079 seconds. Slightly faster than L40S in translation to English (0.266 s vs. 0.298 s) but slower in response generation (0.970 s) and significantly slower in remaining time (8.648 s).
+- **T4 Medium**: Poor performance at 18.383 seconds. Slower in response generation (1.383 s) and has a high remaining time (16.469 s), indicating limited compute capacity for speech synthesis or other tasks.
+- **T4**: Worst performer at 19.441 seconds, with the slowest response generation (1.445 s) and highest remaining time (17.418 s). Similar to T4 Medium but slightly worse, possibly due to configuration differences.
 
-- **L40S (Request 1)**:
-  - Transcription to English Translation: 51.401 - 51.224 = **0.177 s**
-  - Response Generation: 52.271 - 51.401 = **0.870 s**
-  - Translation to Kannada: 52.460 - 52.271 = **0.189 s**
-  - Total: 1.236 s
+## Bottlenecks and Hypotheses
+1. **Remaining Time Dominance**:
+   - The large remaining time (72.71–89.60%) suggests that speech synthesis (text-to-speech) or unlogged processes (e.g., audio preprocessing, network latency) are the primary bottlenecks.
+   - **Hypothesis**: The text-to-speech model is computationally intensive or poorly optimized for T4 and T4 Medium hardware. L40S’s lower remaining time (3.736 s) indicates better handling of this stage.
+2. **Response Generation Variability**:
+   - Response generation takes 0.911–1.445 seconds, with L40S and L4 outperforming T4 and T4 Medium. This stage likely involves a language model inference step, which is sensitive to GPU performance.
+   - **Hypothesis**: The language model is not optimized for lower-end GPUs (T4, T4 Medium), leading to longer inference times.
+3. **First Request Overhead**:
+   - The first request is consistently slower (e.g., L40S: 6.536 s vs. 4.400 s for Request 2). This could be due to model loading, caching, or initialization.
+   - **Hypothesis**: Cold starts or lack of model preloading increase latency for initial requests.
 
-- **L4 (Request 1)**:
-  - Transcription to English Translation: 59.523 - 59.167 = **0.356 s**
-  - Response Generation: 60.559 - 59.523 = **1.036 s**
-  - Translation to Kannada: 60.749 - 60.559 = **0.190 s**
-  - Total: 1.582 s
-
-- **T4 Medium (Request 1)**:
-  - Transcription to English Translation: 47.010 - 46.610 = **0.400 s**
-  - Response Generation: 48.468 - 47.010 = **1.458 s**
-  - Translation to Kannada: 48.710 - 48.468 = **0.242 s**
-  - Total: 2.100 s
-
-- **T4 (Request 1)**:
-  - Transcription to English Translation: 53.619 - 53.189 = **0.430 s**
-  - Response Generation: 55.106 - 53.619 = **1.487 s**
-  - Translation to Kannada: 55.334 - 55.106 = **0.228 s**
-  - Total: 2.145 s
-
-Across all GPUs, the **response generation** stage is the most time-consuming, ranging from 0.870 seconds (L40S) to 1.487 seconds (T4). This stage, likely involving AI model inference, benefits significantly from GPU computational power, explaining the L40S’s superior performance. Transcription and translation stages contribute less to total latency and show smaller variations across GPUs.
-
-### Consistency and Sample Size
-- **L40S**: 2 requests, with latencies varying by 0.004 seconds (highly consistent).
-- **L4**: 3 requests, ranging from 1.293 to 1.582 seconds (moderate variability).
-- **T4 Medium**: 3 requests, ranging from 1.914 to 2.100 seconds (moderate variability).
-- **T4**: 3 requests, ranging from 1.866 to 2.145 seconds (moderate variability).
-
-Despite the smaller sample size for L40S, the consistency within each GPU’s requests suggests reliable average latency estimates.
-
-## Observations
-- **Input Uniformity**: All requests processed the same prompt, ensuring a fair comparison across GPUs.
-- **Warnings**: Logs for L4, T4 Medium, and T4 include a Python warning about deprecated tokenizer usage, absent in L40S logs. This does not affect latency but may indicate software version differences.
-- **T4 Variants**: The negligible difference between T4 (1.984 s) and T4 Medium (1.985 s) suggests that the "Medium" designation has minimal impact on performance for this workload.
+## Recommendations
+1. **Optimize Speech Synthesis**:
+   - Profile the text-to-speech component to confirm it dominates the remaining time. Optimize the model (e.g., quantization, pruning) or use a lighter model compatible with T4 and T4 Medium.
+   - Explore hardware-specific optimizations (e.g., NVIDIA TensorRT for L40S and L4).
+2. **Improve Response Generation**:
+   - Optimize the language model for inference on T4 and T4 Medium (e.g., reduce model size, use mixed precision).
+   - Consider batching or caching common queries to reduce inference time.
+3. **Mitigate Cold Start Latency**:
+   - Implement model preloading or warm-up requests to reduce first-request latency.
+   - Investigate caching mechanisms for frequently asked questions like “What is the capital of Karnataka?”
+4. **Enhance Logging**:
+   - Add timestamps for speech synthesis and audio preprocessing to isolate their contributions to remaining time.
+   - Increase timestamp precision (e.g., microseconds) to accurately measure fast stages like transcription.
+5. **Hardware Upgrade**:
+   - Prioritize L40S for production if budget allows, as it offers ~2x faster performance than L4 and ~4x faster than T4/T4 Medium.
+   - If cost-constrained, L4 is a reasonable compromise, but T4 and T4 Medium are unsuitable for real-time applications due to high latency.
+6. **Address Deprecated Warning**:
+   - Update the tokenizer code to use `text_target` as per the Transformers v5 recommendation. While not a performance issue, this ensures compatibility with future library updates.
 
 ## Conclusion
+The Dhwani AI Voice Assistant’s latency varies significantly by hardware, with L40S achieving the best performance (5.138 s average), followed by L4 (10.079 s), T4 Medium (18.383 s), and T4 (19.441 s). The primary bottleneck is the “remaining time” (72.71–89.60% of total latency), likely dominated by speech synthesis, followed by response generation (7.43–17.73%). Optimizations should focus on text-to-speech efficiency, language model inference, and cold start mitigation. For real-time applications, L40S is recommended, while T4 and T4 Medium require significant optimization to meet acceptable latency thresholds (e.g., <5 seconds). Enhanced logging and profiling will further clarify bottlenecks and guide improvements.
 
-The Voice AI system’s speech-to-speech latency in Kannada varies significantly across NVIDIA GPUs:
-- **L40S** offers the fastest performance with an average latency of **1.238 seconds**, making it ideal for applications requiring low latency.
-- **L4** follows with an average latency of **1.394 seconds**, providing a balanced option.
-- **T4 Medium** and **T4** exhibit higher latencies of **1.985 seconds** and **1.984 seconds**, respectively, suitable for less latency-sensitive scenarios.
+**Future Work**:
+- Conduct profiling to confirm speech synthesis as the main bottleneck.
+- Test optimizations on a broader range of queries to ensure generalizability.
+- Evaluate latency under concurrent requests to assess scalability.
 
-The primary driver of latency differences is the response generation stage, where more powerful GPUs like L40S excel. For optimal performance, the L40S is recommended, though the L4 offers a viable alternative with slightly higher latency. The T4 and T4 Medium GPUs, while slower, perform similarly to each other, indicating that the "Medium" variant does not significantly alter performance in this context.
-
-## Summary Table
-
-| GPU       | Average Latency (seconds) | Number of Requests |
-|-----------|---------------------------|---------------------|
-| L40S      | 1.238                     | 2                   |
-| L4        | 1.394                     | 3                   |
-| T4 Medium | 1.985                     | 3                   |
-| T4        | 1.984                     | 3                   |
-
-This report provides a comprehensive basis for selecting an NVIDIA GPU based on latency requirements for the Voice AI system in Kannada.
+This report provides a foundation for improving Dhwani AI’s performance, ensuring a responsive and effective voice assistant for Kannada users.
 
 
 --
