@@ -198,7 +198,7 @@ This document outlines the revised pitch deck for Dhwani, a German-speaking voic
 - **Title**: Join Us in Empowering 50M Voices
 - **Content**:
   - Closing: “Help us bring Dhwani to Anna and millions of German speakers. Let’s make voice technology inclusive, private, and German-first.”
-  - Contact: Sachin Shetty | sachin@slabstech.com | +4917658013625
+  - Contact: Sachin Shetty | example@example.xocm | +98745688513625
   - Visual: Image of a German user (e.g., Anna smiling with Dhwani) and tagline: “Dhwani: Made for Germany.”
 - **Purpose**: End with an emotional, actionable call to invest.
 
@@ -344,7 +344,7 @@ These visual mockup descriptions guide the creation of a revised Dhwani pitch de
 - **Text**:
   - Title: “Join Us in Empowering 50M Voices” (Montserrat, 40pt, bold, white, above image).
   - Body: “Help bring Dhwani to Anna and millions of German speakers. Let’s make voice technology inclusive, private, and German-first.” (Open Sans, 20pt, white, below image).
-  - Contact: “Sachin Shetty | sachin@slabstech.com | +4917658013625” (Open Sans, 16pt, yellow, bottom-center).
+  - Contact: “Sachin Shetty | example@example.xocm | +98745688513625” (Open Sans, 16pt, yellow, bottom-center).
   - Tagline: “Dhwani: Made for Germany” (Montserrat, 18pt, italic, white, bottom-right).
 - **Elements**: Cluster of yellow microphone icons (20px, top-left), fading into background.
 - **Animation (Optional)**: Image fades in, text slides up, microphones twinkle.
@@ -549,7 +549,7 @@ This revised pitch deck for Dhwani, a German-speaking voice assistant, is optimi
   - **Image**: 300x200px photo of Anna smiling, using Dhwani on phone, Munich backdrop.
   - **Text**: 
     - “Empower Anna’s voice” (Montserrat, 36pt, white, top-center).
-    - “sachin@slabstech.com” (Open Sans, 16pt, yellow, bottom-center).
+    - “example@example.xocm” (Open Sans, 16pt, yellow, bottom-center).
   - **Elements**: Logo bottom-left, green microphone cluster (top-left).
   - **Animation**: Image fades, text slides up.
 - **Rationale**: Emotional close, minimal text invites partnership.
@@ -603,7 +603,7 @@ We’re already live on the Google Play Store, with 1,000+ German-speaking teste
 
 Next, we’re enhancing Dhwani’s German AI, exploring enterprise use, and aiming for 100,000 users by late 2025. We’re not selling a product today—we’re inviting you to join us in empowering Anna and millions more.
 
-**Contact**: Sachin Shetty | sachin@slabstech.com | +4917658013625
+**Contact**: Sachin Shetty | example@example.xocm | +98745688513625
 
 ---
 

@@ -185,7 +185,7 @@ This document provides visual mockup suggestions for the revised "Dhwani-AI-Pitc
   - Bullets (2):
     - “€100,000 for tech, 100K users.” (Poppins Regular, 16pt, black).
     - “Join us to include millions.” (Poppins Regular, 16pt, black).
-  - Contact: “sachin@slabstech.com” (Poppins Italic, 14pt, purple).
+  - Contact: “example@example.xocm” (Poppins Italic, 14pt, purple).
 - **Top-Left**: Logo (~40px).
 - **Bottom-Right**: Slide number “8”.
 **Visuals**:
@@ -288,7 +288,6 @@ We’re seeking €100,000 to reach 100,000 users and refine our tech, partnerin
 
 Let’s give 50 million voices a chance to be heard. Join us.
 
-*Contact*: Sachin Shetty, sachin@slabstech.com, +91 7795113809
 
 ---
 
@@ -449,7 +448,7 @@ This document outlines enhancements to the "Dhwani-AI-Pitch-India.pdf" pitch dec
   - Bullets:
     - *€100,000 for tech, 100K users.*
     - *Join us to include millions.*
-  - Contact: *sachin@slabstech.com*
+  - Contact: *example@example.xocm*
 - **Purpose**: Invite partnership (35 seconds).
 - **Text**: 2 bullets, ~12 words total.
 
@@ -785,8 +784,8 @@ This document outlines improvements to the "Dhwani-AI-Pitch-India.pdf" pitch dec
 - **Content**:
   - Title: **"Together, We Speak"**.
   - Bullets:
-    - *Sachin Shetty: sachin@slabstech.com, +91 7795113809*
-    - *Try: github.com/slabstech/dhwani-app*
+
+    - *Try: github.com/slabstech/dhwani*
     - *“Empower 50M+ voices.”*
   - Add QR code to Play Store.
 - **Purpose**: Memorable close.
