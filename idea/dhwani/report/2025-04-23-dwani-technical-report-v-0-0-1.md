@@ -3,6 +3,34 @@ dwani.ai > Technical report
 Android App Released -> 21 - April 2025
 
 
+hardware Sizing 
+H100 - 2x - dhwani server- large + 2x tts/ indicf5 + 1x llm for pdf 
+
+
+A100 - 1x dhwani server - large 
+
+L40s - 1x dhwani server - medium
+
+L4 - 1x dhwani server - medium
+
+T4 - 1x dhwani server - small 
+
+Local / cpu - 1x dhwani server- small
+
+
+Large - Gemma3-27b-instruct 4bit + 3x Indic Trans2 - 1B + IndicConformer multilingual + indicf5 
+
+
+Medium - Gemma3-12b-instruct 4bit + 3x Indic Trans2 - 200m distilled + IndicConformer multilingual + indicf5 
+
+Small - Gemma3-4b-instruct 4bit + 3x Indic Trans2 - 200m distilled + IndicConformer multilingual + indicf5 
+
+
+
+
+
+evals : 
+
 Gemma-3-12B-IT - quantised
 ai4bharat/indic-conformer-600m-multilingual
 ai4bharat/indictrans2-en-indic-dist-200M
