@@ -1,4 +1,4 @@
-AWS - Activate Program - MVP migration
+dwani.ai - migration to AWS
 
 
 Current setup
@@ -19,14 +19,15 @@ Current setup
 - 24 GB VRAM minimum GPU for Workshop server
 - 70 GB VRAM current system for production 
 
-next changes
+4. Swagger UI
+- hf.space/slabstech 
 
-- Current Setup
+Next changes - May 4 : Android release 
 
-- API Server + User Database 
-    - 
+1. API server  - Backend- fastapi 
+2. Db server - Backend- postgreSQL 
+3. UX - dwani.ai  - landing page - Typescript/React
+4. UX - api.dwani.ai - swagger ux / mintlify
+5. Inference server - backend  - fastapi + pytorch
 
-For dwani.ai - the next steps would be to migrate,
-basic API management servers running on Huggingface Spaces,
-Located at hf.co/slabstech to EC2 instances.
 
