@@ -1,14 +1,6 @@
 dwani.ai - Press Release
 
-dwani.ai website launched for PDF document with AI in kannada.
+Dwani AI is a Voice Assistant designed for India. AI(Artificial Intelligence) is making major changes in the world, but it is available only for English and European languages. 
+700 Million Indian users and 50 Million Kannada users do not have access to AI. 
 
-Project is helping students to learn AI to solve problems for India with local langauge AI applications.
-
-Wokrshops on dwani.ai conducted at Chanakya University, Benguluru on 20th March 2025 and Gopalan College of Engineering and Management, Bengaluru on 28 April 2025. Two workshops planned for May 2025 in Hubballi and Bengaluru.
-
-Android app for dwani.ai to be released before 15th May 2025, app is now undergoing testing for karnatata wide launch.
-
-Next goal of dwani.ai -
-To build a solution for visually challenged persons to use Voice technology in Kannada to lead a better life.
-
-Patent - Will be converted into prototype using technology developed by dwani.ai
+We launched dwani.ai Android app for Early users on 21 April 2025. 40 users are currently using the Android App. The App will become available in Google Play store on 15 May 2025.Free Workshops on dwani.ai were conducted at Chanakya University, Bengaluru on 20th March 2025 and Gopalan College of Engineering and Management, Bengaluru on 28 April 2025. Two workshops planned for May 2025 in Hubballi and Bengaluru.  Workshop is helping students to learn AI to solve problems for India with AI applications in local languages.Next goal of dwani.ai -To build a solution for visually challenged persons to use Voice technology in Kannada to lead a better life.Patent # 201941044370 with Title - Human Assisting Apparatus, developed by Sahana Shetty and team from KLETech Uni.  - Will be converted into prototype using technology developed by dwani.aidwani.ai has been developed by M/S S Labs Solutions from Hubballi, Karnataka
