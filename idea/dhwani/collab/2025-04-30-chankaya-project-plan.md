@@ -17,4 +17,9 @@ Chanakya University Project Plan
         - play back the audio response 
 
 ### Indian Knowledge System
-- 
+- Collect dataset from different sources
+- Design and develop - data modelling and filtering to Instruction Template (LLM Chat Template)
+- Version 1 
+    - RAG system - to create vector data and provide accurate information about Kannada literature
+- Version 2
+    - Finetune model using LORA to deploy model at different locations
