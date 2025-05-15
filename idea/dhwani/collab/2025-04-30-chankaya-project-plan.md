@@ -23,3 +23,12 @@ Chanakya University Project Plan
     - RAG system - to create vector data and provide accurate information about Kannada literature
 - Version 2
     - Finetune model using LORA to deploy model at different locations
+
+
+- May 15 Status
+    - document processing
+        - vllm server : Gemma3 4B/12B
+        - indic translate server - 10/15GB VRAM for best translation with indian languages
+        - docs-indic-server : use vllm-server and indic-translate for Document processing
+    - Ex : https://huggingface.co/spaces/dwani/indic-pdf-chat-custom
+    - pip install dwani
