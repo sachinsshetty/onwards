@@ -1,7 +1,7 @@
 Chanakya University Project Plan
 
 1. Indian Knowledge System - Fine-tune model with Kannada dataset
-
+  - https://github.com/dwani-ai/artha
 2. Chanakya - Voice assistant deployment at Chanakya University
 
 ### Indian Knowledge System
