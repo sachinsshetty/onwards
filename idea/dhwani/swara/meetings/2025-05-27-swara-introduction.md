@@ -18,3 +18,19 @@ Swara - Introduction - 27 May, 2025
 
 - Phase 3 : Editable songs
   - Generate Music based on user requests in real-time
+
+
+
+- Phase 1  - Detail
+  - Data collection - https://tkgovindarao.org/compositions.php
+  - Data transformation
+    - parse document with LLM to convert to Huggingface/dataset format
+  - Literature survey and experiments
+    - Text to Song models
+    - Availability of Open source / Indian language models
+  - Annotation and feedback loop software
+    - System design, development and deploymeny
+  - Inference server setup
+    - llama.cpp server optimsation > CPU/GPU compatbility
+  - tool_call with qwen3 for music embedings
+  - IndicSeamless - Audio conversion to other languages
