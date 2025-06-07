@@ -7,8 +7,6 @@
 - **Code with Voice**: Enables voice-based coding functionalities for seamless development.
 - **Robotics**: Integrates AI-driven solutions for robotics applications.
 
-## Pitch Deck
-
 ### Compute Phases
 | Phase | Compute Resources | Description |
 |-------|-------------------|-------------|
