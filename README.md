@@ -1,6 +1,6 @@
 # onwards
 
-# Dwani.ai - Pitch Deck
+# dwani.ai - Pitch Deck
 
 ## Core Features
 - **Inference API**: Provides capabilities for real-time data processing and model inference.
