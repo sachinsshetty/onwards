@@ -147,3 +147,38 @@ No
 
 Are you currently fundraising?
 no
+
+What convinced you to apply to Y Combinator? Did someone encourage you to apply? Have you been to any YC events?
+
+How did you hear about Y Combinator?
+
+
+If you had any other ideas you considered applying with, please list them. One may be something we've been waiting for. Often when we fund people it's to do something they list here and not in the main application.
+---
+
+If you have not formed the company yet, describe the planned equity ownership breakdown among the founders, employees and any other proposed stockholders. If there are multiple founders, be sure to give the proposed equity ownership of each founder and founder title (e.g. CEO). (This question is as much for you as us.)
+--
+
+What convinced you to apply to Y Combinator? Did someone encourage you to apply? Have you been to any YC events?
+
+--
+
+How did you hear about Y Combinator?
+--
+
+
+Founder profile
+
+Please tell us about a time you most successfully hacked some (non-computer) system to your advantage.
+---
+
+Please tell us in one or two sentences about the most impressive thing other than this startup that you have built or achieved.
+
+---
+
+Tell us about things you've built before. For example apps you’ve built, websites, open source contributions. Include URLs if possible.
+---
+
+List any competitions/awards you have won, or papers you’ve published.
+
+--
