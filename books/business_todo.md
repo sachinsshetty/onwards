@@ -1,0 +1,16 @@
+Double Your Profits in 6 Months or Less, 
+Certain to Win, 
+The Goal, 
+The Toyota Production System (Ohno), 
+Out of the Crisis, 
+7 Powers, 
+the Origin of Wealth, 
+Maverick (Semler), 
+Antifragile, 
+the Great Game of Business, 
+Let My People Go Surfing, 
+Alchemy, 
+Wanting, 
+Market Based Management, 
+Zero to One 
+The Prince.
