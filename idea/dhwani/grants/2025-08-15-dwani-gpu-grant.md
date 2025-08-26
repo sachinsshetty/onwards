@@ -9,7 +9,7 @@ We request **two H200 GPUs** from Lambda.ai for six months to support ongoing op
 
 **GPU 1**  
 - **Purpose:** Run **Gemma3‑27B‑Instruct** with vLLM for large-scale document, image, and text inference.  
-- **Goal:** Deliver fast and efficient LLM inference to the open-source community.
+- **Goal:** Deliver fast and efficient LLM inference for Indian languages.
 
 **GPU 2**  
 - **Purpose:**  
@@ -21,9 +21,11 @@ We request **two H200 GPUs** from Lambda.ai for six months to support ongoing op
 
 ---
 
-### Technical Context
+### Technical
 Lambda.ai offers discounted GH200 pricing due to arm64 library compatibility challenges.  
 We have rebuilt most required libraries from source, enabling **arm64-compatible multimodal inference** on **dwani.ai**.
+ - https://github.com/dwani-ai/vllm-arm64/releases
+ - https://github.com/dwani-ai/docs/tree/main/docs/misc/v2
 
 ---
 
@@ -32,7 +34,7 @@ We have rebuilt most required libraries from source, enabling **arm64-compatible
 | Resource | Cost/hour (USD) | Hours | Days | Total (USD) |
 |----------|----------------|-------|------|-------------|
 | 1× H200  | 1.49            | 24    | 180  | 6,436.80    |
-| 2× H200  | —               | —     | —    | 12,873.60   |
+| 2× H200  | 2.98            | 24    | 180    | 12,873.60   |
 
 **Total GPU Cost (2× H200 / 6 months):** $12,873.60  
 **Grant Budget:** $15,000  
@@ -49,16 +51,19 @@ The remaining funds will be used for:
 ---
 
 ### Other Grants & Status
-We also received **$7,500 in GPU credits** from Lambda via the **NVIDIA Inception Program**.  
-- ~95% used for building dwani.ai and offering open API access.  
-- ~15 days of credits remain.  
-- After August, lack of additional resources will require suspending large-scale public availability.
+- We received **$7,500 in GPU credits** from Lambda via the **NVIDIA Inception Program**.  
+  - 100% used for building dwani.ai and offering open API access.  
+  - lack of additional resources will require suspending API access for workshops + student projects.
+
+- We received **USD 25k Google cloud credits**
+  - we use for UI + API router deployment. 
+  - GCP GPU costs are 5x compared to nebius/lambda labs,  it costs 10K USD per H100 GPU per month. 
+  - Its not suitable for inference API for dwani.ai
 
 ---
 
 ### Impact
 This grant will allow us to:  
-- Continue large-scale multimodal inference without interruption  
-- Keep API access free for researchers, developers, and educators  
-- Contribute robust, arm64-supported open-source tooling to the AI community
-- 
+- Continue multimodal inference without interruption  
+- Keep API access free for workshops and student developers
+- Contribute arm64-supported open-source tooling to the AI community
