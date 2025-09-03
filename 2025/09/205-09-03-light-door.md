@@ -11,3 +11,17 @@ keep fighting.
 rage against the dying of the light.
 
 find the way, like a river 
+
+---
+
+
+survive
+
+Survive at all costs, 
+
+Dont despair, 
+
+Fight, Fight,  Fight. 
+
+Fight against the dying of the light.
+
