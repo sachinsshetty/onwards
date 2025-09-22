@@ -9,7 +9,7 @@ During IndiaFoss conference, We got requests from NGO's, Educational institution
 
 ### Proposed Work
   - Build Discovery - Document Analytics platform for Indian languages
-    - Windows + Linux App - built with Electron to dwani.ai in Labs
+    - Windows + Linux App - built with Electron to use dwani.ai in Labs/ Offices
     - Source Code
       - https://github.com/dwani-ai/dwani-desktop
       - https://github.com/dwani-ai/discovery
